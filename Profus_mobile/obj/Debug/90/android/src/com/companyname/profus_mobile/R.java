@@ -505,14 +505,12 @@ public final class R {
      */
     public static final int backgroundStacked=0x7f040033;
     /**
-     * Tint to apply to the background.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int backgroundTint=0x7f040034;
     /**
-     * Blending mode used to apply the background tint.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -1037,7 +1035,6 @@ public final class R {
      */
     public static final int chipStyle=0x7f040076;
     /**
-     * Close button icon
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -1141,15 +1138,12 @@ public final class R {
      */
     public static final int color=0x7f040083;
     /**
-     * Bright complement to the primary branding color. By default, this is the color applied
-     * to framework controls (via colorControlActivated).
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int colorAccent=0x7f040084;
     /**
-     * Default color of background imagery for floating components, ex. dialogs, popups, and cards.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
@@ -1196,16 +1190,12 @@ public final class R {
      */
     public static final int colorError=0x7f04008a;
     /**
-     * The primary branding color for the app. By default, this is the color applied to the
-     * action bar background.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int colorPrimary=0x7f04008b;
     /**
-     * Dark variant of the primary branding color. By default, this is the color applied to
-     * the status bar (via statusBarColor) and navigation bar (via navigationBarColor).
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
@@ -1540,7 +1530,6 @@ public final class R {
      */
     public static final int editTextColor=0x7f0400b3;
     /**
-     * Default EditText style.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -1548,7 +1537,6 @@ public final class R {
      */
     public static final int editTextStyle=0x7f0400b4;
     /**
-     * Elevation for the action bar itself
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -2022,7 +2010,6 @@ public final class R {
      */
     public static final int hoveredFocusedTranslationZ=0x7f0400eb;
     /**
-     * Specifies the drawable used for the application icon.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -2074,14 +2061,12 @@ public final class R {
      */
     public static final int iconStartPadding=0x7f0400f1;
     /**
-     * Tint to apply to the icon.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int iconTint=0x7f0400f2;
     /**
-     * Blending mode used to apply the icon tint.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -4620,127 +4605,127 @@ public final class R {
     public static final int browser_actions_menu_item_text=0x7f09002e;
     public static final int browser_actions_menu_items=0x7f09002f;
     public static final int browser_actions_menu_view=0x7f090030;
-    public static final int buttonA=0x7f090031;
-    public static final int buttonB=0x7f090032;
-    public static final int buttonC=0x7f090033;
-    public static final int buttonD=0x7f090034;
-    public static final int buttonPanel=0x7f090035;
-    public static final int center=0x7f090036;
-    public static final int center_horizontal=0x7f090037;
-    public static final int center_vertical=0x7f090038;
-    public static final int checkbox=0x7f090039;
-    public static final int chronometer=0x7f09003a;
-    public static final int clip_horizontal=0x7f09003b;
-    public static final int clip_vertical=0x7f09003c;
-    public static final int collapseActionView=0x7f09003d;
-    public static final int container=0x7f09003e;
-    public static final int content=0x7f09003f;
-    public static final int contentPanel=0x7f090040;
-    public static final int coordinator=0x7f090041;
-    public static final int custom=0x7f090042;
-    public static final int customPanel=0x7f090043;
-    public static final int decor_content_parent=0x7f090044;
-    public static final int default_activity_button=0x7f090045;
-    public static final int design_bottom_sheet=0x7f090046;
-    public static final int design_menu_item_action_area=0x7f090047;
-    public static final int design_menu_item_action_area_stub=0x7f090048;
-    public static final int design_menu_item_text=0x7f090049;
-    public static final int design_navigation_view=0x7f09004a;
-    public static final int disableHome=0x7f09004b;
-    public static final int edit_query=0x7f09004c;
-    public static final int end=0x7f09004d;
-    public static final int enterAlways=0x7f09004e;
-    public static final int enterAlwaysCollapsed=0x7f09004f;
-    public static final int exitUntilCollapsed=0x7f090050;
-    public static final int expand_activities_button=0x7f090051;
-    public static final int expanded_menu=0x7f090052;
-    public static final int fill=0x7f090053;
-    public static final int fill_horizontal=0x7f090054;
-    public static final int fill_vertical=0x7f090055;
-    public static final int filled=0x7f090056;
-    public static final int fixed=0x7f090057;
-    public static final int forever=0x7f090058;
-    public static final int ghost_view=0x7f090059;
-    public static final int group_divider=0x7f09005a;
-    public static final int home=0x7f09005b;
-    public static final int homeAsUp=0x7f09005c;
-    public static final int icon=0x7f09005d;
-    public static final int icon_group=0x7f09005e;
-    public static final int ifRoom=0x7f09005f;
-    public static final int image=0x7f090060;
-    public static final int imageView1=0x7f090061;
-    public static final int info=0x7f090062;
-    public static final int italic=0x7f090063;
-    public static final int item_touch_helper_previous_elevation=0x7f090064;
-    public static final int labeled=0x7f090065;
-    public static final int largeLabel=0x7f090066;
-    public static final int left=0x7f090067;
-    public static final int line1=0x7f090068;
-    public static final int line3=0x7f090069;
-    public static final int linearLayout1=0x7f09006a;
-    public static final int linearLayout2=0x7f09006b;
-    public static final int linearLayout3=0x7f09006c;
-    public static final int listMode=0x7f09006d;
-    public static final int list_item=0x7f09006e;
-    public static final int masked=0x7f09006f;
-    public static final int message=0x7f090070;
-    public static final int middle=0x7f090071;
-    public static final int mini=0x7f090072;
-    public static final int mtrl_child_content_container=0x7f090073;
-    public static final int mtrl_internal_children_alpha_tag=0x7f090074;
-    public static final int multiply=0x7f090075;
-    public static final int navigation_header_container=0x7f090076;
-    public static final int never=0x7f090077;
-    public static final int none=0x7f090078;
-    public static final int normal=0x7f090079;
-    public static final int notification_background=0x7f09007a;
-    public static final int notification_main_column=0x7f09007b;
-    public static final int notification_main_column_container=0x7f09007c;
-    public static final int outline=0x7f09007d;
-    public static final int parallax=0x7f09007e;
-    public static final int parentPanel=0x7f09007f;
-    public static final int parent_matrix=0x7f090080;
-    public static final int pin=0x7f090081;
-    public static final int progress_circular=0x7f090082;
-    public static final int progress_horizontal=0x7f090083;
-    public static final int radio=0x7f090084;
-    public static final int right=0x7f090085;
-    public static final int right_icon=0x7f090086;
-    public static final int right_side=0x7f090087;
-    public static final int save_image_matrix=0x7f090088;
-    public static final int save_non_transition_alpha=0x7f090089;
-    public static final int save_scale_type=0x7f09008a;
-    public static final int screen=0x7f09008b;
-    public static final int scroll=0x7f09008c;
-    public static final int scrollIndicatorDown=0x7f09008d;
-    public static final int scrollIndicatorUp=0x7f09008e;
-    public static final int scrollView=0x7f09008f;
-    public static final int scrollView1=0x7f090090;
-    public static final int scrollable=0x7f090091;
-    public static final int search_badge=0x7f090092;
-    public static final int search_bar=0x7f090093;
-    public static final int search_button=0x7f090094;
-    public static final int search_close_btn=0x7f090095;
-    public static final int search_edit_frame=0x7f090096;
-    public static final int search_go_btn=0x7f090097;
-    public static final int search_mag_icon=0x7f090098;
-    public static final int search_plate=0x7f090099;
-    public static final int search_src_text=0x7f09009a;
-    public static final int search_voice_btn=0x7f09009b;
-    public static final int select_dialog_listview=0x7f09009c;
-    public static final int selected=0x7f09009d;
-    public static final int shortcut=0x7f09009e;
-    public static final int showCustom=0x7f09009f;
-    public static final int showHome=0x7f0900a0;
-    public static final int showTitle=0x7f0900a1;
-    public static final int smallLabel=0x7f0900a2;
-    public static final int snackbar_action=0x7f0900a3;
-    public static final int snackbar_text=0x7f0900a4;
-    public static final int snap=0x7f0900a5;
-    public static final int snapMargins=0x7f0900a6;
-    public static final int space1=0x7f0900a7;
-    public static final int space2=0x7f0900a8;
-    public static final int space3=0x7f0900a9;
+    public static final int buttonPanel=0x7f090031;
+    public static final int center=0x7f090032;
+    public static final int center_horizontal=0x7f090033;
+    public static final int center_vertical=0x7f090034;
+    public static final int checkbox=0x7f090035;
+    public static final int chronometer=0x7f090036;
+    public static final int clip_horizontal=0x7f090037;
+    public static final int clip_vertical=0x7f090038;
+    public static final int collapseActionView=0x7f090039;
+    public static final int container=0x7f09003a;
+    public static final int content=0x7f09003b;
+    public static final int contentPanel=0x7f09003c;
+    public static final int coordinator=0x7f09003d;
+    public static final int custom=0x7f09003e;
+    public static final int customPanel=0x7f09003f;
+    public static final int decor_content_parent=0x7f090040;
+    public static final int default_activity_button=0x7f090041;
+    public static final int design_bottom_sheet=0x7f090042;
+    public static final int design_menu_item_action_area=0x7f090043;
+    public static final int design_menu_item_action_area_stub=0x7f090044;
+    public static final int design_menu_item_text=0x7f090045;
+    public static final int design_navigation_view=0x7f090046;
+    public static final int disableHome=0x7f090047;
+    public static final int edit_query=0x7f090048;
+    public static final int end=0x7f090049;
+    public static final int enterAlways=0x7f09004a;
+    public static final int enterAlwaysCollapsed=0x7f09004b;
+    public static final int exitUntilCollapsed=0x7f09004c;
+    public static final int expand_activities_button=0x7f09004d;
+    public static final int expanded_menu=0x7f09004e;
+    public static final int fill=0x7f09004f;
+    public static final int fill_horizontal=0x7f090050;
+    public static final int fill_vertical=0x7f090051;
+    public static final int filled=0x7f090052;
+    public static final int fixed=0x7f090053;
+    public static final int forever=0x7f090054;
+    public static final int ghost_view=0x7f090055;
+    public static final int group_divider=0x7f090056;
+    public static final int home=0x7f090057;
+    public static final int homeAsUp=0x7f090058;
+    public static final int icon=0x7f090059;
+    public static final int icon_group=0x7f09005a;
+    public static final int ifRoom=0x7f09005b;
+    public static final int image=0x7f09005c;
+    public static final int imageView1=0x7f09005d;
+    public static final int info=0x7f09005e;
+    public static final int italic=0x7f09005f;
+    public static final int item_touch_helper_previous_elevation=0x7f090060;
+    public static final int labeled=0x7f090061;
+    public static final int largeLabel=0x7f090062;
+    public static final int left=0x7f090063;
+    public static final int line1=0x7f090064;
+    public static final int line3=0x7f090065;
+    public static final int linearLayout1=0x7f090066;
+    public static final int linearLayout2=0x7f090067;
+    public static final int listMode=0x7f090068;
+    public static final int list_item=0x7f090069;
+    public static final int masked=0x7f09006a;
+    public static final int message=0x7f09006b;
+    public static final int middle=0x7f09006c;
+    public static final int mini=0x7f09006d;
+    public static final int mtrl_child_content_container=0x7f09006e;
+    public static final int mtrl_internal_children_alpha_tag=0x7f09006f;
+    public static final int multiply=0x7f090070;
+    public static final int navigation_header_container=0x7f090071;
+    public static final int never=0x7f090072;
+    public static final int none=0x7f090073;
+    public static final int normal=0x7f090074;
+    public static final int notification_background=0x7f090075;
+    public static final int notification_main_column=0x7f090076;
+    public static final int notification_main_column_container=0x7f090077;
+    public static final int outline=0x7f090078;
+    public static final int parallax=0x7f090079;
+    public static final int parentPanel=0x7f09007a;
+    public static final int parent_matrix=0x7f09007b;
+    public static final int pin=0x7f09007c;
+    public static final int progress_circular=0x7f09007d;
+    public static final int progress_horizontal=0x7f09007e;
+    public static final int radio=0x7f09007f;
+    public static final int right=0x7f090080;
+    public static final int right_icon=0x7f090081;
+    public static final int right_side=0x7f090082;
+    public static final int save_image_matrix=0x7f090083;
+    public static final int save_non_transition_alpha=0x7f090084;
+    public static final int save_scale_type=0x7f090085;
+    public static final int screen=0x7f090086;
+    public static final int scroll=0x7f090087;
+    public static final int scrollIndicatorDown=0x7f090088;
+    public static final int scrollIndicatorUp=0x7f090089;
+    public static final int scrollView=0x7f09008a;
+    public static final int scrollView1=0x7f09008b;
+    public static final int scrollable=0x7f09008c;
+    public static final int search_badge=0x7f09008d;
+    public static final int search_bar=0x7f09008e;
+    public static final int search_button=0x7f09008f;
+    public static final int search_close_btn=0x7f090090;
+    public static final int search_edit_frame=0x7f090091;
+    public static final int search_go_btn=0x7f090092;
+    public static final int search_mag_icon=0x7f090093;
+    public static final int search_plate=0x7f090094;
+    public static final int search_src_text=0x7f090095;
+    public static final int search_voice_btn=0x7f090096;
+    public static final int select_dialog_listview=0x7f090097;
+    public static final int selected=0x7f090098;
+    public static final int shortcut=0x7f090099;
+    public static final int showCustom=0x7f09009a;
+    public static final int showHome=0x7f09009b;
+    public static final int showTitle=0x7f09009c;
+    public static final int smallLabel=0x7f09009d;
+    public static final int snackbar_action=0x7f09009e;
+    public static final int snackbar_text=0x7f09009f;
+    public static final int snap=0x7f0900a0;
+    public static final int snapMargins=0x7f0900a1;
+    public static final int space1=0x7f0900a2;
+    public static final int space2=0x7f0900a3;
+    public static final int space3=0x7f0900a4;
+    public static final int space4=0x7f0900a5;
+    public static final int space5=0x7f0900a6;
+    public static final int space6=0x7f0900a7;
+    public static final int space7=0x7f0900a8;
+    public static final int space8=0x7f0900a9;
     public static final int spacer=0x7f0900aa;
     public static final int spinner=0x7f0900ab;
     public static final int split_action_bar=0x7f0900ac;
@@ -4858,23 +4843,22 @@ public final class R {
     public static final int design_text_input_password_icon=0x7f0c002c;
     public static final int info=0x7f0c002d;
     public static final int inscription=0x7f0c002e;
-    public static final int interface_questions=0x7f0c002f;
-    public static final int leaderboard=0x7f0c0030;
-    public static final int mode_de_jeu=0x7f0c0031;
-    public static final int montrer_carte=0x7f0c0032;
-    public static final int mtrl_layout_snackbar=0x7f0c0033;
-    public static final int mtrl_layout_snackbar_include=0x7f0c0034;
-    public static final int notification_action=0x7f0c0035;
-    public static final int notification_action_tombstone=0x7f0c0036;
-    public static final int notification_template_custom_big=0x7f0c0037;
-    public static final int notification_template_icon_group=0x7f0c0038;
-    public static final int notification_template_part_chronometer=0x7f0c0039;
-    public static final int notification_template_part_time=0x7f0c003a;
-    public static final int parametre=0x7f0c003b;
-    public static final int select_dialog_item_material=0x7f0c003c;
-    public static final int select_dialog_multichoice_material=0x7f0c003d;
-    public static final int select_dialog_singlechoice_material=0x7f0c003e;
-    public static final int support_simple_spinner_dropdown_item=0x7f0c003f;
+    public static final int leaderboard=0x7f0c002f;
+    public static final int mode_de_jeu=0x7f0c0030;
+    public static final int montrer_carte=0x7f0c0031;
+    public static final int mtrl_layout_snackbar=0x7f0c0032;
+    public static final int mtrl_layout_snackbar_include=0x7f0c0033;
+    public static final int notification_action=0x7f0c0034;
+    public static final int notification_action_tombstone=0x7f0c0035;
+    public static final int notification_template_custom_big=0x7f0c0036;
+    public static final int notification_template_icon_group=0x7f0c0037;
+    public static final int notification_template_part_chronometer=0x7f0c0038;
+    public static final int notification_template_part_time=0x7f0c0039;
+    public static final int parametre=0x7f0c003a;
+    public static final int select_dialog_item_material=0x7f0c003b;
+    public static final int select_dialog_multichoice_material=0x7f0c003c;
+    public static final int select_dialog_singlechoice_material=0x7f0c003d;
+    public static final int support_simple_spinner_dropdown_item=0x7f0c003e;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f0d0000;
@@ -5462,12 +5446,12 @@ public final class R {
      * <tr><td><code>{@link #ActionBar_customNavigationLayout com.companyname.profus_mobile:customNavigationLayout}</code></td><td>Specifies a layout for custom navigation.</td></tr>
      * <tr><td><code>{@link #ActionBar_displayOptions com.companyname.profus_mobile:displayOptions}</code></td><td>Options affecting how the action bar is displayed.</td></tr>
      * <tr><td><code>{@link #ActionBar_divider com.companyname.profus_mobile:divider}</code></td><td>Specifies the drawable used for item dividers.</td></tr>
-     * <tr><td><code>{@link #ActionBar_elevation com.companyname.profus_mobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
+     * <tr><td><code>{@link #ActionBar_elevation com.companyname.profus_mobile:elevation}</code></td><td></td></tr>
      * <tr><td><code>{@link #ActionBar_height com.companyname.profus_mobile:height}</code></td><td></td></tr>
      * <tr><td><code>{@link #ActionBar_hideOnContentScroll com.companyname.profus_mobile:hideOnContentScroll}</code></td><td>Set true to hide the action bar on a vertical nested scroll of content.</td></tr>
      * <tr><td><code>{@link #ActionBar_homeAsUpIndicator com.companyname.profus_mobile:homeAsUpIndicator}</code></td><td>Specifies a drawable to use for the 'home as up' indicator.</td></tr>
      * <tr><td><code>{@link #ActionBar_homeLayout com.companyname.profus_mobile:homeLayout}</code></td><td>Specifies a layout to use for the "home" section of the action bar.</td></tr>
-     * <tr><td><code>{@link #ActionBar_icon com.companyname.profus_mobile:icon}</code></td><td>Specifies the drawable used for the application icon.</td></tr>
+     * <tr><td><code>{@link #ActionBar_icon com.companyname.profus_mobile:icon}</code></td><td></td></tr>
      * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.companyname.profus_mobile:indeterminateProgressStyle}</code></td><td>Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
      * <tr><td><code>{@link #ActionBar_itemPadding com.companyname.profus_mobile:itemPadding}</code></td><td>Specifies padding that should be applied to the left and right sides of
      * system-provided items in the bar.</td></tr>
@@ -6503,7 +6487,7 @@ public final class R {
      * <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_touchscreenBlocksFocus android:touchscreenBlocksFocus}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_keyboardNavigationCluster android:keyboardNavigationCluster}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_elevation com.companyname.profus_mobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
+     * <tr><td><code>{@link #AppBarLayout_elevation com.companyname.profus_mobile:elevation}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_expanded com.companyname.profus_mobile:expanded}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_liftOnScroll com.companyname.profus_mobile:liftOnScroll}</code></td><td></td></tr>
      * </table>
@@ -6554,9 +6538,8 @@ public final class R {
      */
     public static final int AppBarLayout_android_keyboardNavigationCluster=2;
     /**
-     * <p>
-     * @attr description
-     * Elevation for the action bar itself
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#elevation}
+     * attribute's value can be found in the {@link #AppBarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -7257,16 +7240,16 @@ public final class R {
      * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall com.companyname.profus_mobile:buttonStyleSmall}</code></td><td>Small Button style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_checkboxStyle com.companyname.profus_mobile:checkboxStyle}</code></td><td>Default Checkbox style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle com.companyname.profus_mobile:checkedTextViewStyle}</code></td><td>Default CheckedTextView style.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorAccent com.companyname.profus_mobile:colorAccent}</code></td><td>Bright complement to the primary branding color.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.companyname.profus_mobile:colorBackgroundFloating}</code></td><td>Default color of background imagery for floating components, ex.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorAccent com.companyname.profus_mobile:colorAccent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.companyname.profus_mobile:colorBackgroundFloating}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal com.companyname.profus_mobile:colorButtonNormal}</code></td><td>The color applied to framework buttons in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlActivated com.companyname.profus_mobile:colorControlActivated}</code></td><td>The color applied to framework controls in their activated (ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight com.companyname.profus_mobile:colorControlHighlight}</code></td><td>The color applied to framework control highlights (ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlNormal com.companyname.profus_mobile:colorControlNormal}</code></td><td>The color applied to framework controls in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorError com.companyname.profus_mobile:colorError}</code></td><td>Color used for error states and things that need to be drawn to
      * the user's attention.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimary com.companyname.profus_mobile:colorPrimary}</code></td><td>The primary branding color for the app.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.companyname.profus_mobile:colorPrimaryDark}</code></td><td>Dark variant of the primary branding color.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimary com.companyname.profus_mobile:colorPrimary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.companyname.profus_mobile:colorPrimaryDark}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal com.companyname.profus_mobile:colorSwitchThumbNormal}</code></td><td>The color applied to framework switch thumbs in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_controlBackground com.companyname.profus_mobile:controlBackground}</code></td><td>The background used by framework controls.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_dialogCornerRadius com.companyname.profus_mobile:dialogCornerRadius}</code></td><td>Preferred corner radius of dialogs.</td></tr>
@@ -7278,7 +7261,7 @@ public final class R {
      * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight com.companyname.profus_mobile:dropdownListPreferredItemHeight}</code></td><td>The preferred item height for dropdown lists.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_editTextBackground com.companyname.profus_mobile:editTextBackground}</code></td><td>EditText background drawable.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_editTextColor com.companyname.profus_mobile:editTextColor}</code></td><td>EditText text foreground color.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextStyle com.companyname.profus_mobile:editTextStyle}</code></td><td>Default EditText style.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextStyle com.companyname.profus_mobile:editTextStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator com.companyname.profus_mobile:homeAsUpIndicator}</code></td><td>Specifies a drawable to use for the 'home as up' indicator.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle com.companyname.profus_mobile:imageButtonStyle}</code></td><td>ImageButton background drawable.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator com.companyname.profus_mobile:listChoiceBackgroundIndicator}</code></td><td>Drawable used as a background for selected list items.</td></tr>
@@ -9146,7 +9129,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomAppBar_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #BottomAppBar_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabAlignmentMode com.companyname.profus_mobile:fabAlignmentMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabCradleMargin com.companyname.profus_mobile:fabCradleMargin}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabCradleRoundedCornerRadius com.companyname.profus_mobile:fabCradleRoundedCornerRadius}</code></td><td></td></tr>
@@ -9165,9 +9148,8 @@ public final class R {
       0x7f0400c6, 0x7f0400e5
     };
     /**
-     * <p>
-     * @attr description
-     * Tint to apply to the background.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#backgroundTint}
+     * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -9249,7 +9231,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomNavigationView_elevation com.companyname.profus_mobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_elevation com.companyname.profus_mobile:elevation}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemBackground com.companyname.profus_mobile:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemHorizontalTranslationEnabled com.companyname.profus_mobile:itemHorizontalTranslationEnabled}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemIconSize com.companyname.profus_mobile:itemIconSize}</code></td><td></td></tr>
@@ -9277,9 +9259,8 @@ public final class R {
       0x7f040107, 0x7f04012b
     };
     /**
-     * <p>
-     * @attr description
-     * Elevation for the action bar itself
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#elevation}
+     * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -9742,7 +9723,7 @@ public final class R {
      * <tr><td><code>{@link #Chip_chipStartPadding com.companyname.profus_mobile:chipStartPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_chipStrokeColor com.companyname.profus_mobile:chipStrokeColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_chipStrokeWidth com.companyname.profus_mobile:chipStrokeWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIcon com.companyname.profus_mobile:closeIcon}</code></td><td>Close button icon</td></tr>
+     * <tr><td><code>{@link #Chip_closeIcon com.companyname.profus_mobile:closeIcon}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconEnabled com.companyname.profus_mobile:closeIconEnabled}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconEndPadding com.companyname.profus_mobile:closeIconEndPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconSize com.companyname.profus_mobile:closeIconSize}</code></td><td></td></tr>
@@ -10044,9 +10025,8 @@ public final class R {
      */
     public static final int Chip_chipStrokeWidth=19;
     /**
-     * <p>
-     * @attr description
-     * Close button icon
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#closeIcon}
+     * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -11146,10 +11126,10 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.companyname.profus_mobile:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.companyname.profus_mobile:backgroundTintMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_borderWidth com.companyname.profus_mobile:borderWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_elevation com.companyname.profus_mobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_elevation com.companyname.profus_mobile:elevation}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_fabCustomSize com.companyname.profus_mobile:fabCustomSize}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_fabSize com.companyname.profus_mobile:fabSize}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_hideMotionSpec com.companyname.profus_mobile:hideMotionSpec}</code></td><td></td></tr>
@@ -11181,9 +11161,8 @@ public final class R {
       0x7f0401d0
     };
     /**
-     * <p>
-     * @attr description
-     * Tint to apply to the background.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#backgroundTint}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -11193,9 +11172,8 @@ public final class R {
      */
     public static final int FloatingActionButton_backgroundTint=0;
     /**
-     * <p>
-     * @attr description
-     * Blending mode used to apply the background tint.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#backgroundTintMode}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -11233,9 +11211,8 @@ public final class R {
      */
     public static final int FloatingActionButton_borderWidth=2;
     /**
-     * <p>
-     * @attr description
-     * Elevation for the action bar itself
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#elevation}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -12373,15 +12350,15 @@ public final class R {
      * <tr><td><code>{@link #MaterialButton_android_insetRight android:insetRight}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetTop android:insetTop}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetBottom android:insetBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTintMode com.companyname.profus_mobile:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTintMode com.companyname.profus_mobile:backgroundTintMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_cornerRadius com.companyname.profus_mobile:cornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_icon com.companyname.profus_mobile:icon}</code></td><td>Specifies the drawable used for the application icon.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_icon com.companyname.profus_mobile:icon}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconGravity com.companyname.profus_mobile:iconGravity}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconPadding com.companyname.profus_mobile:iconPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconSize com.companyname.profus_mobile:iconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTint com.companyname.profus_mobile:iconTint}</code></td><td>Tint to apply to the icon.</td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTintMode com.companyname.profus_mobile:iconTintMode}</code></td><td>Blending mode used to apply the icon tint.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTint com.companyname.profus_mobile:iconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTintMode com.companyname.profus_mobile:iconTintMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_rippleColor com.companyname.profus_mobile:rippleColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_strokeColor com.companyname.profus_mobile:strokeColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_strokeWidth com.companyname.profus_mobile:strokeWidth}</code></td><td></td></tr>
@@ -12478,9 +12455,8 @@ public final class R {
      */
     public static final int MaterialButton_android_insetBottom=3;
     /**
-     * <p>
-     * @attr description
-     * Tint to apply to the background.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#backgroundTint}
+     * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12490,9 +12466,8 @@ public final class R {
      */
     public static final int MaterialButton_backgroundTint=4;
     /**
-     * <p>
-     * @attr description
-     * Blending mode used to apply the background tint.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#backgroundTintMode}
+     * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -12530,9 +12505,8 @@ public final class R {
      */
     public static final int MaterialButton_cornerRadius=6;
     /**
-     * <p>
-     * @attr description
-     * Specifies the drawable used for the application icon.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#icon}
+     * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -12586,9 +12560,8 @@ public final class R {
      */
     public static final int MaterialButton_iconSize=10;
     /**
-     * <p>
-     * @attr description
-     * Tint to apply to the icon.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#iconTint}
+     * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12598,9 +12571,8 @@ public final class R {
      */
     public static final int MaterialButton_iconTint=11;
     /**
-     * <p>
-     * @attr description
-     * Blending mode used to apply the icon tint.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#iconTintMode}
+     * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -12711,12 +12683,12 @@ public final class R {
      * <tr><td><code>{@link #MaterialComponentsTheme_chipGroupStyle com.companyname.profus_mobile:chipGroupStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_chipStandaloneStyle com.companyname.profus_mobile:chipStandaloneStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_chipStyle com.companyname.profus_mobile:chipStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent com.companyname.profus_mobile:colorAccent}</code></td><td>Bright complement to the primary branding color.</td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating com.companyname.profus_mobile:colorBackgroundFloating}</code></td><td>Default color of background imagery for floating components, ex.</td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary com.companyname.profus_mobile:colorPrimary}</code></td><td>The primary branding color for the app.</td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark com.companyname.profus_mobile:colorPrimaryDark}</code></td><td>Dark variant of the primary branding color.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent com.companyname.profus_mobile:colorAccent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating com.companyname.profus_mobile:colorBackgroundFloating}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary com.companyname.profus_mobile:colorPrimary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark com.companyname.profus_mobile:colorPrimaryDark}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_colorSecondary com.companyname.profus_mobile:colorSecondary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle com.companyname.profus_mobile:editTextStyle}</code></td><td>Default EditText style.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle com.companyname.profus_mobile:editTextStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_floatingActionButtonStyle com.companyname.profus_mobile:floatingActionButtonStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_materialButtonStyle com.companyname.profus_mobile:materialButtonStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_materialCardViewStyle com.companyname.profus_mobile:materialCardViewStyle}</code></td><td></td></tr>
@@ -12843,10 +12815,8 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_chipStyle=4;
     /**
-     * <p>
-     * @attr description
-     * Bright complement to the primary branding color. By default, this is the color applied
-     * to framework controls (via colorControlActivated).
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#colorAccent}
+     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12856,9 +12826,8 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorAccent=5;
     /**
-     * <p>
-     * @attr description
-     * Default color of background imagery for floating components, ex. dialogs, popups, and cards.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#colorBackgroundFloating}
+     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12868,10 +12837,8 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorBackgroundFloating=6;
     /**
-     * <p>
-     * @attr description
-     * The primary branding color for the app. By default, this is the color applied to the
-     * action bar background.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#colorPrimary}
+     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12881,10 +12848,8 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorPrimary=7;
     /**
-     * <p>
-     * @attr description
-     * Dark variant of the primary branding color. By default, this is the color applied to
-     * the status bar (via statusBarColor) and navigation bar (via navigationBarColor).
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#colorPrimaryDark}
+     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12905,9 +12870,8 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorSecondary=9;
     /**
-     * <p>
-     * @attr description
-     * Default EditText style.
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#editTextStyle}
+     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -13328,8 +13292,8 @@ public final class R {
      * action view.</td></tr>
      * <tr><td><code>{@link #MenuItem_alphabeticModifiers com.companyname.profus_mobile:alphabeticModifiers}</code></td><td>The alphabetic modifier key.</td></tr>
      * <tr><td><code>{@link #MenuItem_contentDescription com.companyname.profus_mobile:contentDescription}</code></td><td>The content description associated with the item.</td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTint com.companyname.profus_mobile:iconTint}</code></td><td>Tint to apply to the icon.</td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTintMode com.companyname.profus_mobile:iconTintMode}</code></td><td>Blending mode used to apply the icon tint.</td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTint com.companyname.profus_mobile:iconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTintMode com.companyname.profus_mobile:iconTintMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuItem_numericModifiers com.companyname.profus_mobile:numericModifiers}</code></td><td>The numeric modifier key.</td></tr>
      * <tr><td><code>{@link #MenuItem_showAsAction com.companyname.profus_mobile:showAsAction}</code></td><td>How this item should display in the Action Bar, if present.</td></tr>
      * <tr><td><code>{@link #MenuItem_tooltipText com.companyname.profus_mobile:tooltipText}</code></td><td>The tooltip text associated with the item.</td></tr>
@@ -13868,7 +13832,7 @@ public final class R {
      * <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_elevation com.companyname.profus_mobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
+     * <tr><td><code>{@link #NavigationView_elevation com.companyname.profus_mobile:elevation}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_headerLayout com.companyname.profus_mobile:headerLayout}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_itemBackground com.companyname.profus_mobile:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_itemHorizontalPadding com.companyname.profus_mobile:itemHorizontalPadding}</code></td><td></td></tr>
@@ -13935,9 +13899,8 @@ public final class R {
      */
     public static final int NavigationView_android_maxWidth=2;
     /**
-     * <p>
-     * @attr description
-     * Elevation for the action bar itself
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#elevation}
+     * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -14413,7 +14376,7 @@ public final class R {
      * <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_closeIcon com.companyname.profus_mobile:closeIcon}</code></td><td>Close button icon</td></tr>
+     * <tr><td><code>{@link #SearchView_closeIcon com.companyname.profus_mobile:closeIcon}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_commitIcon com.companyname.profus_mobile:commitIcon}</code></td><td>Commit icon shown in the query suggestion row</td></tr>
      * <tr><td><code>{@link #SearchView_defaultQueryHint com.companyname.profus_mobile:defaultQueryHint}</code></td><td>Default query hint used when {@code queryHint} is undefined and
      * the search view's {@code SearchableInfo} does not provide a hint.</td></tr>
@@ -14779,7 +14742,7 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_elevation com.companyname.profus_mobile:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_elevation com.companyname.profus_mobile:elevation}</code></td><td></td></tr>
      * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.companyname.profus_mobile:maxActionInlineWidth}</code></td><td></td></tr>
      * </table>
      * @see #SnackbarLayout_android_maxWidth
@@ -14803,9 +14766,8 @@ public final class R {
      */
     public static final int SnackbarLayout_android_maxWidth=0;
     /**
-     * <p>
-     * @attr description
-     * Elevation for the action bar itself
+     * <p>This symbol is the offset where the {@link com.companyname.profus_mobile.R.attr#elevation}
+     * attribute's value can be found in the {@link #SnackbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -17026,8 +16988,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ViewBackgroundHelper_android_background android:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.companyname.profus_mobile:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.companyname.profus_mobile:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.companyname.profus_mobile:backgroundTintMode}</code></td><td></td></tr>
      * </table>
      * @see #ViewBackgroundHelper_android_background
      * @see #ViewBackgroundHelper_backgroundTint
