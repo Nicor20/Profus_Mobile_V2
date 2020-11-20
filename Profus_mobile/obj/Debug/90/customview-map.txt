@@ -27,6 +27,7 @@ resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
 ScrollView;obj\Debug\90\res\layout\mode_de_jeu.xml
+Space;obj\Debug\90\res\layout\activity_main.xml
 Space;obj\Debug\90\res\layout\info.xml
 Space;obj\Debug\90\res\layout\inscription.xml
 Space;obj\Debug\90\res\layout\leaderboard.xml
