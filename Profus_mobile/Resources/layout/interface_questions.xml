@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1" >
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_weight="15"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2" >
+            <Button
+                android:text="A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:textSize="50"
+                android:id="@+id/buttonA" />
+            <Button
+                android:text="B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:textSize="50"
+                android:id="@+id/buttonB" />
+        </LinearLayout>
+        <TextView
+            android:text="Afficher la question de maniere approprié."
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="70"
+            android:id="@+id/textView1" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_weight="15"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3">
+            <Button
+                android:text="C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:textSize="50"
+                android:id="@+id/buttonC" />
+            <Button
+                android:text="D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:textSize="50"
+                android:id="@+id/buttonD" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

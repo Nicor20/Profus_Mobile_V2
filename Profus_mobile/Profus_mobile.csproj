@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Info.cs" />
     <Compile Include="Inscription.cs" />
+    <Compile Include="interface_questions.cs" />
     <Compile Include="Leaderboard.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Mode_de_Jeu.cs" />
@@ -137,6 +138,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Montrer_Carte.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\interface_questions.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

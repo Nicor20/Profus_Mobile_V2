@@ -11,6 +11,7 @@
     <activity android:label="@string/app_name" android:name="Mode_de_Jeu"></activity>
     <activity android:label="@string/app_name" android:name="Parametre"></activity>
     <activity android:label="@string/app_name" android:name="Montrer_Carte"></activity>
+    <activity android:label="@string/app_name" android:name="interface_questions"></activity>
   </application>
   
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

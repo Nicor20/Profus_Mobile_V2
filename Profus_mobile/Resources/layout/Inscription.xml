@@ -28,6 +28,28 @@
             android:id="@+id/textView1"
             android:textSize ="30dp"
             android:textStyle="bold"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="Entrez votre prénom SVP : "
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2" />
+            <AutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:id="@+id/prenom"
+                android:backgroundTint="#ff9a8888"
+                android:text="Prenom" 
+               />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
