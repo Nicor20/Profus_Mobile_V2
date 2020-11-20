@@ -23,14 +23,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:textSize="50"
                 android:id="@+id/buttonA" />
             <Button
                 android:text="B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:textSize="50"
+                
                 android:id="@+id/buttonB" />
         </LinearLayout>
         <TextView
@@ -52,14 +51,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:textSize="50"
+                
                 android:id="@+id/buttonC" />
             <Button
                 android:text="D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:textSize="50"
+                
                 android:id="@+id/buttonD" />
 
         </LinearLayout>
