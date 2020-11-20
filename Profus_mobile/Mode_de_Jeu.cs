@@ -18,7 +18,6 @@ namespace Profus_mobile
     public class Mode_de_Jeu : Activity
     {
         public static int Nb_joueur;
-        TextView Titre;
         List<String> List_Mode = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -28,25 +27,15 @@ namespace Profus_mobile
 
             SetContentView(Resource.Layout.Mode_de_Jeu);
 
-            // Create your application here
 
-            //Chrono
-            //Par catégorie
-            //Jusqu'a la mort
-            //
             LinearLayout layout = FindViewById<LinearLayout>(Resource.Id.Linear_Layout_Button_MJ);
             LayoutParams lp = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
-            if(Nb_joueur == 1)
+            if(Nb_joueur <= 8)
             {
                 List_Mode.Clear();
-                List_Mode.Add("Chrono");
-                List_Mode.Add("Par Catégorie");
+                List_Mode.Add("Contre la montre");
                 List_Mode.Add("Jusqu'a la mort");
-                List_Mode.Add("Retour");
-            }
-            else if(Nb_joueur == 2)
-            {
-                List_Mode.Clear();
+                List_Mode.Add("Par Catégorie");
                 List_Mode.Add("Retour");
             }
             else
