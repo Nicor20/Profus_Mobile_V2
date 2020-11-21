@@ -4,7 +4,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true">
+  <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:label="@string/app_name" android:name="Info"></activity>
     <activity android:label="@string/app_name" android:name="Inscription"></activity>
     <activity android:label="@string/app_name" android:name="Leaderboard"></activity>
@@ -12,6 +12,7 @@
     <activity android:label="@string/app_name" android:name="Parametre"></activity>
     <activity android:label="@string/app_name" android:name="Montrer_Carte"></activity>
     <activity android:label="@string/app_name" android:name="interface_questions"></activity>
+    <activity android:label="@string/app_name" android:name="NouveauJoueur"></activity>
     <activity android:label="Info" android:noHistory="true" android:theme="@style/AppTheme" android:name="crc647c4441a42b754995.Info" />
     <activity android:label="Inscription" android:noHistory="true" android:name="crc647c4441a42b754995.Inscription" />
     <activity android:label="interface_questions" android:name="crc647c4441a42b754995.interface_questions" />
@@ -24,6 +25,7 @@
     </activity>
     <activity android:label="Mode de Jeu" android:noHistory="true" android:name="crc647c4441a42b754995.Mode_de_Jeu" />
     <activity android:label="Montrer_Carte" android:noHistory="true" android:name="crc647c4441a42b754995.Montrer_Carte" />
+    <activity android:label="NouveauJoueur" android:name="crc647c4441a42b754995.NouveauJoueur" />
     <activity android:label="Parametre" android:noHistory="true" android:name="crc647c4441a42b754995.Parametre" />
     <service android:name="crc64a98abb514ffad9f1.KeepAliveService" />
     <receiver android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" android:name="crc64a0e0a82d0db9a07d.BatteryBroadcastReceiver" />

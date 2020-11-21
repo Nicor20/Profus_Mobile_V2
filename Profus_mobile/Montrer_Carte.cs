@@ -65,7 +65,7 @@ namespace Profus_mobile
 
         void Suivant(object sender, System.EventArgs e)
         {
-
+            StartActivity(new Intent(this, typeof(Inscription)));
         }
 
         void Retour(object sender, System.EventArgs e)

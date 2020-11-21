@@ -25,7 +25,6 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.Bouton_Jouer).Click += this.Jouer;
             FindViewById<Button>(Resource.Id.Bouton_Info).Click += this.Info;
             FindViewById<Button>(Resource.Id.Bouton_Parametre).Click += this.Parametre;
-            FindViewById<Button>(Resource.Id.Bouton_Inscription).Click += this.Inscription;
             FindViewById<Button>(Resource.Id.Bouton_Score).Click += this.Score;
             FindViewById<Button>(Resource.Id.Bouton_Quitter).Click += this.Quitter;
             #endregion
@@ -65,11 +64,7 @@ namespace Profus_mobile
             StartActivity(new Intent(this, typeof(Parametre)));
         }
 
-        void Inscription(object sender, System.EventArgs e)
-        {
-            StartActivity(new Intent(this, typeof(Inscription)));
-        }
-
+       
         void Score(object sender, System.EventArgs e)
         {
             StartActivity(new Intent(this, typeof(Leaderboard)));
