@@ -1551,24 +1551,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zach-\\.nuget\\packages\\": {},
+    "C:\\Users\\canti\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Ecole\\S1\\Projet\\Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
+      "projectUniqueName": "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
       "projectName": "Profus_mobile",
-      "projectPath": "C:\\Ecole\\S1\\Projet\\Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
-      "packagesPath": "C:\\Users\\zach-\\.nuget\\packages\\",
-      "outputPath": "C:\\Ecole\\S1\\Projet\\Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\obj\\",
+      "projectPath": "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
+      "packagesPath": "C:\\Users\\canti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\zach-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\canti\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1577,7 +1577,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://www.nuget.org/packages/sqlite-net-pcl/": {}
       },
       "frameworks": {
         "monoandroid90": {

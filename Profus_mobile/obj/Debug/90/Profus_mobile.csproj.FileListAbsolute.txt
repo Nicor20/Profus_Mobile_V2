@@ -811,3 +811,6 @@ C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\sta
 C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\interface_questions.xml
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\src\crc647c4441a42b754995\interface_questions.java
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_CleanIntermediateIfNeeded.stamp

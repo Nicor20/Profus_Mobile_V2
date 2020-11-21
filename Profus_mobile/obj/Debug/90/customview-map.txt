@@ -7,10 +7,13 @@ Button;obj\Debug\90\res\layout\activity_main.xml
 Button;obj\Debug\90\res\layout\interface_questions.xml
 Button;obj\Debug\90\res\layout\montrer_carte.xml
 cache-path;C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\values\colors.xml
 color;obj\Debug\90\res\values\ic_launcher_background.xml
 external-cache-path;C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 ImageView;obj\Debug\90\res\layout\montrer_carte.xml
@@ -25,6 +28,7 @@ LinearLayout;obj\Debug\90\res\layout\mode_de_jeu.xml
 LinearLayout;obj\Debug\90\res\layout\montrer_carte.xml
 LinearLayout;obj\Debug\90\res\layout\parametre.xml
 paths;C:\Ecole\S1\Projet\Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
