@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Zach\\Universite\\S1\\Projet\\appli Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj": {}
+    "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj": {}
   },
   "projects": {
-    "E:\\Zach\\Universite\\S1\\Projet\\appli Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj": {
+    "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Zach\\Universite\\S1\\Projet\\appli Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
+        "projectUniqueName": "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
         "projectName": "Profus_mobile",
-        "projectPath": "E:\\Zach\\Universite\\S1\\Projet\\appli Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
-        "packagesPath": "C:\\Users\\client\\.nuget\\packages\\",
-        "outputPath": "E:\\Zach\\Universite\\S1\\Projet\\appli Profus\\GitHub\\Profus_Mobile_V2\\Profus_mobile\\obj\\",
+        "projectPath": "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\Profus_mobile.csproj",
+        "packagesPath": "C:\\Users\\canti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\canti\\Desktop\\Profus_Mobile_V2\\Profus_mobile\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\client\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\canti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,7 +27,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/packages/sqlite-net-pcl/": {}
         },
         "frameworks": {
           "monoandroid90": {
@@ -53,6 +54,10 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.335, )"
             }
           }
         }
