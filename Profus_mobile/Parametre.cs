@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Parametre", NoHistory = true)]
+    [Activity(Label = "Parametre")]
     public class Parametre : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

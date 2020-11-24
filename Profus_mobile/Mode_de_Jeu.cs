@@ -14,10 +14,9 @@ using static Android.App.ActionBar;
 namespace Profus_mobile
 {
 
-    [Activity(Label = "Mode de Jeu", NoHistory = true)]
+    [Activity(Label = "Mode de Jeu")]
     public class Mode_de_Jeu : Activity
     {
-        public static int Nb_joueur;
         List<String> List_Mode = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -30,7 +29,7 @@ namespace Profus_mobile
 
             LinearLayout layout = FindViewById<LinearLayout>(Resource.Id.Linear_Layout_Button_MJ);
             LayoutParams lp = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
-            if(Nb_joueur <= 8)
+            if(Variables.Nb_Joueur <= 8)
             {
                 List_Mode.Clear();
                 List_Mode.Add("Contre la montre");
@@ -64,8 +63,7 @@ namespace Profus_mobile
             }
             else
             {
-                Montrer_Carte.Mode_Jeu = btn.Text;
-                Montrer_Carte.NB_joueur = Nb_joueur;
+                Variables.Mode_Jeu = btn.Text;
                 StartActivity(new Intent(this, typeof(Montrer_Carte)));
             }
             

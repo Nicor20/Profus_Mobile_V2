@@ -7,9 +7,8 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/space1"
-        android:layout_marginBottom="20dp" />
+        android:layout_height="20dp"
+        android:id="@+id/space1"/>
     <TextView
         android:text="Nouvelle Inscription"
         android:gravity="center"
@@ -34,11 +33,19 @@
         android:hint="Entrez votre nom"
         android:id="@+id/editTextNom" />
 
-    <Space
+    <EditText
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/space2"
-        android:layout_marginBottom="40dp" />
+        android:layout_weight="1"
+        android:hint="Entrez votre age"
+        android:id="@+id/editTextAge" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/space2"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"

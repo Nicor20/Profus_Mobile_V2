@@ -12,12 +12,9 @@ using Android.Widget;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Montrer_Carte", NoHistory = true)]
+    [Activity(Label = "Montrer_Carte")]
     public class Montrer_Carte : Activity
     {
-        public static int NB_joueur;
-        public static String Mode_Jeu;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -26,31 +23,31 @@ namespace Profus_mobile
 
             // Create your application here
 
-            if(NB_joueur == 1)
+            if(Variables.Nb_Joueur == 1)
             {
                 //Image 1
             }
-            else if(NB_joueur == 2)
+            else if(Variables.Nb_Joueur == 2)
             {
                 //Image 2
             }
-            else if (NB_joueur == 3)
+            else if (Variables.Nb_Joueur == 3)
             {
                 //Image 3
             }
-            else if (NB_joueur == 4)
+            else if (Variables.Nb_Joueur == 4)
             {
                 //Image 4
             }
-            else if (NB_joueur == 5)
+            else if (Variables.Nb_Joueur == 5)
             {
                 //Image 5
             }
-            else if (NB_joueur == 6)
+            else if (Variables.Nb_Joueur == 6)
             {
                 //Image 6
             }
-            else if (NB_joueur == 7)
+            else if (Variables.Nb_Joueur == 7)
             {
                 //Image 7
             }

@@ -17,8 +17,8 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/space1"
-            android:layout_marginBottom="20dp" />
+            android:layout_weight="1"
+            android:id="@+id/space1"/>
         <TextView
             android:text="Leaderboard"
             android:gravity="center"
@@ -27,7 +27,43 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
             android:textSize ="30dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_weight="2"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/space2"/>
+        <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:id="@+id/scrollView1" >
+            <TextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewScore" />
+        </ScrollView>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/space3"/>
+        <Button
+            android:text="Retourner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonRetour" 
+            android:layout_weight="2"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/space4"/>
     </LinearLayout>
 
 </LinearLayout>
