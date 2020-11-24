@@ -16,6 +16,7 @@ namespace Profus_mobile
     {
         public static int Nb_Joueur;
         public static string Mode_Jeu;
+        public static string Catégorie;
         public static List<int> Joueurs = new List<int>();
     }
 }

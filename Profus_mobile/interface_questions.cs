@@ -17,8 +17,11 @@ namespace Profus_mobile
     public class interface_questions : Activity
     {
         public static int Reponse;
-        public static int numero = 1;
-        TextView question;
+        public int numero = 1;
+        TextView View_Info_Joueur;
+        TextView View_Info_Question;
+        TextView View_Question;
+        public int joueur = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -27,14 +30,18 @@ namespace Profus_mobile
             SetContentView(Resource.Layout.interface_questions);
 
             //Exemple d'appel pour l'affichage selon le numero
-            question = FindViewById<TextView>(Resource.Id.textView1);
-            question.Text = DB_Manager.Read_Question_Number(numero);
+            View_Info_Joueur = FindViewById<TextView>(Resource.Id.textViewInfo_Joueur);
+            View_Info_Question = FindViewById<TextView>(Resource.Id.textViewInfo_Question);
+            View_Question = FindViewById<TextView>(Resource.Id.textView_Question);
+
+            View_Info_Joueur.Text = "#" + (joueur + 1) + " " + DB_Manager.Read_User_Info_By_Number(Variables.Joueurs[joueur]);
+            View_Info_Question.Text = "Question " + numero + " " + DB_Manager.Read_Question_Info_By_Number(numero);
+            View_Question.Text = DB_Manager.Read_Question_By_Number(numero);
 
             FindViewById<Button>(Resource.Id.buttonA).Click += this.ReponseA;
             FindViewById<Button>(Resource.Id.buttonB).Click += this.ReponseB;
             FindViewById<Button>(Resource.Id.buttonC).Click += this.ReponseC;
             FindViewById<Button>(Resource.Id.buttonD).Click += this.ReponseD;
-
         }
 
 
@@ -50,7 +57,6 @@ namespace Profus_mobile
             }
 
         }
-
         void ReponseB(object sender, System.EventArgs e)
         {
             if (Reponse == 2)
@@ -87,16 +93,29 @@ namespace Profus_mobile
 
         public void Reussi()
         {
-            numero++;
-            Task.Delay(2500).Wait();
-            question.Text = DB_Manager.Read_Question_Number(numero);
+            DB_Manager.Update_User(Variables.Joueurs[joueur], true);
+            Next_Question();
         }
-
         private void Echec()
-        {   
+        {
+            DB_Manager.Update_User(Variables.Joueurs[joueur], false);
+            Next_Question();
+        }
+        private void Next_Question()
+        {
+            if (joueur < Variables.Nb_Joueur-1)
+            {
+                joueur++;
+            }
+            else
+            {
+                joueur = 0;
+            }
             numero++;
             Task.Delay(2500).Wait();
-            question.Text = DB_Manager.Read_Question_Number(numero);
+            View_Info_Joueur.Text = "#" + (joueur + 1) + " " + DB_Manager.Read_User_Info_By_Number(Variables.Joueurs[joueur]);
+            View_Info_Question.Text = "Question " + numero + " " + DB_Manager.Read_Question_Info_By_Number(numero);
+            View_Question.Text = DB_Manager.Read_Question_By_Number(numero);
         }
     }
 }

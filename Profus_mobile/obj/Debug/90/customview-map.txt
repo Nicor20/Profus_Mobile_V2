@@ -6,6 +6,7 @@ Button;obj\Debug\90\res\layout\activity_main.xml
 Button;obj\Debug\90\res\layout\inscription.xml
 Button;obj\Debug\90\res\layout\interface_questions.xml
 Button;obj\Debug\90\res\layout\leaderboard.xml
+Button;obj\Debug\90\res\layout\mode_de_jeu.xml
 Button;obj\Debug\90\res\layout\montrer_carte.xml
 Button;obj\Debug\90\res\layout\nouveaujoueur.xml
 cache-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -49,6 +50,7 @@ Space;obj\Debug\90\res\layout\nouveaujoueur.xml
 Space;obj\Debug\90\res\layout\parametre.xml
 Spinner;obj\Debug\90\res\layout\activity_main.xml
 Spinner;obj\Debug\90\res\layout\inscription.xml
+Spinner;obj\Debug\90\res\layout\montrer_carte.xml
 string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml

@@ -12,51 +12,60 @@
         android:id="@+id/linearLayout1" >
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="348.8dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/imageView1" />
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:id="@+id/linearLayout2">
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50.0dp"
-                android:id="@+id/space1" />
             <TextView
                 android:text="Nombre de joueur"
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1" />
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50.0dp"
-                android:id="@+id/space2" />
+                android:layout_weight="1"
+                android:id="@+id/textView_NbJoueur" />
             <TextView
                 android:text="Mode de jeu"
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2" />
+                android:layout_weight="1"
+                android:id="@+id/textView_Mode" />
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="50.0dp"
-                android:id="@+id/space3" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@id/space1" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/spinnerCarte" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/space2" />
             <Button
                 android:text="Suivant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/Bouton_Suivant" />
             <Button
                 android:text="Retour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/Bouton_Retour" />
         </LinearLayout>
     </LinearLayout>

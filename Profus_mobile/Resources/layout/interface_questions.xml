@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -32,12 +32,37 @@
                 
                 android:id="@+id/buttonB" />
         </LinearLayout>
-        <TextView
-            android:text="Afficher la question de maniere approprié."
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="70"
-            android:id="@+id/textView1" />
+            android:id="@+id/linearLayout4" >
+            <TextView
+                android:text="Numero Joueur + Nom"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:id="@+id/textViewInfo_Joueur" />
+            <TextView
+                android:text="Num question + Categorie"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:id="@+id/textViewInfo_Question" />
+            <TextView
+                android:text="Afficher la question de maniere approprié."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="85"
+                android:id="@+id/textView_Question" />
+        </LinearLayout>
+        
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"

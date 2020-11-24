@@ -56,6 +56,35 @@ namespace Profus_mobile
                 //Image 8
             }
 
+            FindViewById<TextView>(Resource.Id.textView_NbJoueur).Text = Variables.Nb_Joueur + (Variables.Nb_Joueur > 1 ? " Joueurs" : " Joueur");
+
+            
+            if(Variables.Mode_Jeu == "Categorie")
+            {
+                FindViewById<TextView>(Resource.Id.textView_Mode).Text = "Mode : Par catégorie";
+                FindViewById<Spinner>(Resource.Id.spinnerCarte).Enabled = true;
+                Setup_Spinner_Categorie(FindViewById<Spinner>(Resource.Id.spinnerCarte));
+            }
+            else if(Variables.Mode_Jeu == "Montre")
+            {
+                FindViewById<TextView>(Resource.Id.textView_Mode).Text = "Mode : Contre la montre";
+                FindViewById<Spinner>(Resource.Id.spinnerCarte).Enabled = true;
+                Setup_Spinner_Montre(FindViewById<Spinner>(Resource.Id.spinnerCarte));
+            }
+            else
+            {
+                FindViewById<TextView>(Resource.Id.textView_Mode).Text = "Mode : Jusqu'a la mort";
+                FindViewById<Spinner>(Resource.Id.spinnerCarte).Enabled = false;
+            }
+
+
+
+
+
+
+
+
+
             FindViewById<Button>(Resource.Id.Bouton_Suivant).Click += this.Suivant;
             FindViewById<Button>(Resource.Id.Bouton_Retour).Click += this.Retour;
         }
@@ -67,8 +96,38 @@ namespace Profus_mobile
 
         void Retour(object sender, System.EventArgs e)
         {
-            StartActivity(new Intent(this, typeof(Mode_de_Jeu)));
+            this.Finish();
         }
 
+        void Setup_Spinner_Categorie(Spinner spin)
+        {
+            List<string> list = new List<string>();
+            list.Add("Corps Humain");
+            list.Add("Littérature et Expressions");
+            list.Add("Sport et Culture");
+            list.Add("Astronomie");
+            list.Add("Science et Technologie");
+            list.Add("Faune et Flore");
+            list.Add("Histoire et Géographie");
+            list.Add("Pseudosciences");
+            list.Add("Divers");
+
+            spin.Prompt = "Choisir la catégorie";
+            var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, list);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spin.Adapter = adapter;
+        }
+        void Setup_Spinner_Montre(Spinner spin)
+        {
+            List<string> list = new List<string>();
+            list.Add("30 secondes");
+            list.Add("45 secondes");
+            list.Add("60 secondes");
+
+            spin.Prompt = "Choisir le temps de jeu";
+            var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, list);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spin.Adapter = adapter;
+        }
     }
 }

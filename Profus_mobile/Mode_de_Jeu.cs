@@ -17,64 +17,40 @@ namespace Profus_mobile
     [Activity(Label = "Mode de Jeu")]
     public class Mode_de_Jeu : Activity
     {
-        List<String> List_Mode = new List<string>();
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             SetContentView(Resource.Layout.Mode_de_Jeu);
-
-
-            LinearLayout layout = FindViewById<LinearLayout>(Resource.Id.Linear_Layout_Button_MJ);
-            LayoutParams lp = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
-            if(Variables.Nb_Joueur <= 8)
-            {
-                List_Mode.Clear();
-                List_Mode.Add("Contre la montre");
-                List_Mode.Add("Jusqu'a la mort");
-                List_Mode.Add("Par Catégorie");
-                List_Mode.Add("Retour");
-            }
-            else
-            {
-                List_Mode.Clear();
-                List_Mode.Add("Retour");
-            }
-
-
-            foreach(var list in List_Mode)
-            {
-                Button button = new Button(this);
-                button.Text = list;
-                button.Click += new EventHandler(this.Button_Click);
-                layout.AddView(button, lp);
-            }
+            FindViewById<Button>(Resource.Id.button_Mort).Click += this.Mode_Mort;
+            FindViewById<Button>(Resource.Id.button_Montre).Click += this.Mode_Montre;
+            FindViewById<Button>(Resource.Id.button_Categorie).Click += this.Mode_Categorie;
+            FindViewById<Button>(Resource.Id.button_Retour).Click += this.Retour;
         }
 
-        void Button_Click(object sender,EventArgs e)
+        void Mode_Mort(object sender,EventArgs e)
         {
-            Button btn = sender as Button;
-            if(btn.Text == "Retour")
-            {
-                //Quitter
-                StartActivity(new Intent(this, typeof(MainActivity)));
-            }
-            else
-            {
-                Variables.Mode_Jeu = btn.Text;
-                StartActivity(new Intent(this, typeof(Montrer_Carte)));
-            }
-            
-            
-
-
-
-
-
-
-
+            Variables.Mode_Jeu = "Mort";
+            StartActivity(new Intent(this, typeof(Montrer_Carte)));
         }
+
+        void Mode_Montre(object sender, EventArgs e)
+        {
+            Variables.Mode_Jeu = "Montre";
+            StartActivity(new Intent(this, typeof(Montrer_Carte)));
+        }
+
+        void Mode_Categorie(object sender, EventArgs e)
+        {
+            Variables.Mode_Jeu = "Categorie";
+            StartActivity(new Intent(this, typeof(Montrer_Carte)));
+        }
+
+        void Retour(object sender, EventArgs e)
+        {
+            this.Finish();
+        }
+
     }
 }
