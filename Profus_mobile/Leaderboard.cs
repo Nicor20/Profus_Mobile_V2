@@ -13,7 +13,7 @@ using SQLite;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Leaderboard")]
+    [Activity(Label = "Leaderboard", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Leaderboard : Activity
     {
         TextView score;

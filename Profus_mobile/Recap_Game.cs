@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Recap_Game")]
+    [Activity(Label = "Recap_Game", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Recap_Game : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,7 +20,13 @@ namespace Profus_mobile
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Recap_Game);
             // Create your application here
-            FindViewById<Button>(Resource.Id.button_Fermer).Click += this.Fermer;
+            FindViewById<Button>(Resource.Id.button_Menu).Click += this.Menu;
+            FindViewById<Button>(Resource.Id.button_Rejouer).Click += this.Rejouer;
+
+
+
+
+
             FindViewById<TextView>(Resource.Id.textView1).Text = "";
             foreach (var item in Variables.Recap_Game)
             {
@@ -28,9 +34,20 @@ namespace Profus_mobile
             }
         }
 
-        private void Fermer(object sender, System.EventArgs e)
+        private void Rejouer(object sender, System.EventArgs e)
         {
-            this.Finish();
+            StartActivity(new Intent(this, typeof(interface_questions)));
+            Finish();
+        }
+
+        private void Menu(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            intent.AddFlags(ActivityFlags.ClearTask);
+            intent.AddFlags(ActivityFlags.ClearTop);
+            intent.AddFlags(ActivityFlags.NewTask);
+            StartActivity(intent);
+            Finish();
         }
     }
 }

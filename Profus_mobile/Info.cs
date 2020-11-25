@@ -11,7 +11,7 @@ using Android.Widget;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Info", Theme = "@style/AppTheme")]
+    [Activity(Label = "Info", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Info : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

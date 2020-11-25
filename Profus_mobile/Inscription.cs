@@ -13,7 +13,7 @@ using SQLite;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Inscription")]
+    [Activity(Label = "Inscription", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Inscription : Activity
     {
         //public int Nb_Inscrit = 0;
@@ -27,7 +27,7 @@ namespace Profus_mobile
         protected override void OnRestart()
         {
             base.OnRestart();
-            Setup_Spinner(spinner[Variables.Joueurs.Count()], Variables.Joueurs.Count()+1);
+            Setup_Spinner(spinner[Variables.Joueurs.Count()+1], Variables.Joueurs.Count()+1);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

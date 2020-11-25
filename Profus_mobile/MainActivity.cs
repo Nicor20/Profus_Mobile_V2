@@ -8,11 +8,9 @@ using Android.Content;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class MainActivity : AppCompatActivity
     {
-        Spinner spinner;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,7 +33,6 @@ namespace Profus_mobile
             #region Creation DB
             DB_Manager.Create_DB(this);
             #endregion
-
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

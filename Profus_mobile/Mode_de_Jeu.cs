@@ -14,7 +14,7 @@ using static Android.App.ActionBar;
 namespace Profus_mobile
 {
 
-    [Activity(Label = "Mode de Jeu")]
+    [Activity(Label = "Mode de Jeu", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Mode_de_Jeu : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

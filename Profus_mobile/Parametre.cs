@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Parametre")]
+    [Activity(Label = "Parametre", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Parametre : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "Montrer_Carte")]
+    [Activity(Label = "Montrer_Carte", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Montrer_Carte : Activity
     {
         Spinner Spinner_Carte;

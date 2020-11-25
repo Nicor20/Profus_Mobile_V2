@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "interface_questions")]
+    [Activity(Label = "interface_questions", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class interface_questions : Activity
     {
         public static int Reponse;
@@ -67,8 +67,6 @@ namespace Profus_mobile
             }
 
             affichage_question();
-
-
         }
 
         private void Retour(object sender, System.EventArgs e)

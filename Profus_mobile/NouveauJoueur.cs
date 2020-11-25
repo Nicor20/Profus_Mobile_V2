@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Profus_mobile
 {
-    [Activity(Label = "NouveauJoueur")]
+    [Activity(Label = "NouveauJoueur", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class NouveauJoueur : Activity
     {
         TextView prenom;
