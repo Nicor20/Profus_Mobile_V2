@@ -49,19 +49,15 @@ namespace Profus_mobile
                 string resultat;
                 if(item.Reussi != 0 && item.Echec == 0)
                 {
-                    resultat = "100%";
+                    resultat = "100.00%";
                 }
-                else if(item.Reussi == 0 && item.Echec != 0)
+                else if(item.Reussi == 0 && item.Echec == 0)
                 {
-                    resultat = "0%";
-                }
-                else if(item.Reussi != 0 && item.Echec != 0)
-                {
-                    resultat = ((item.Reussi / (item.Reussi + item.Echec)) * 100.0) + "%";
+                    resultat = "NaN";
                 }
                 else
                 {
-                    resultat = "0%";
+                    resultat = (((float)item.Reussi / ((float)item.Reussi + (float)item.Echec)) * 100.0).ToString("0.00") + "%";
                 }
                 score.Text +="\n" + String.Format("{0,-15} | {1,-15} | {2,-5} | {3,-11} | {4,-11} | {5,-7}",item.Prenom,item.Nom,item.Age,item.Reussi,item.Echec,resultat);
             }

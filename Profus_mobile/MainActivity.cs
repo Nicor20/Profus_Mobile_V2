@@ -11,7 +11,6 @@ namespace Profus_mobile
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        int Nb_joueur;
         Spinner spinner;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -23,20 +22,15 @@ namespace Profus_mobile
 
             #region Initialisation des boutons
             FindViewById<Button>(Resource.Id.Bouton_Jouer).Click += this.Jouer;
+            FindViewById<Button>(Resource.Id.Bouton_Inscription).Click += this.Inscription;
             FindViewById<Button>(Resource.Id.Bouton_Info).Click += this.Info;
             FindViewById<Button>(Resource.Id.Bouton_Parametre).Click += this.Parametre;
             FindViewById<Button>(Resource.Id.Bouton_Score).Click += this.Score;
             FindViewById<Button>(Resource.Id.Bouton_Quitter).Click += this.Quitter;
             #endregion
 
-            #region Initialisation spinner
-            spinner = FindViewById<Spinner>(Resource.Id.spinner);
-            spinner.Prompt = "Nombre de joueurs?";
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-            var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Player, Android.Resource.Layout.SimpleSpinnerItem);
-            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = adapter;
-            #endregion
+            FindViewById<Button>(Resource.Id.Bouton_Info).Enabled = false;
+            FindViewById<Button>(Resource.Id.Bouton_Parametre).Enabled = false;
 
             #region Creation DB
             DB_Manager.Create_DB(this);
@@ -51,13 +45,15 @@ namespace Profus_mobile
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        #region Boutons
         void Jouer(object sender, System.EventArgs e)
         {
-            Variables.Nb_Joueur = Nb_joueur;
             StartActivity(new Intent(this, typeof(Mode_de_Jeu)));
         }
 
+        void Inscription(object sender, System.EventArgs e)
+        {
+            StartActivity(new Intent(this, typeof(NouveauJoueur)));
+        }
 
         void Info(object sender, System.EventArgs e)
         {
@@ -79,13 +75,5 @@ namespace Profus_mobile
         {
             Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
         }
-        #endregion
-
-        #region Spinner
-        private void spinner_ItemSelected(object sender,AdapterView.ItemSelectedEventArgs e)
-        {
-            Nb_joueur = int.Parse(spinner.SelectedItemPosition.ToString()) + 1;
-        }
-        #endregion
     }
 }

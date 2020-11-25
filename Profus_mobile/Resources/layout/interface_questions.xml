@@ -59,8 +59,14 @@
                 android:text="Afficher la question de maniere approprié."
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="85"
+                android:layout_weight="83"
                 android:id="@+id/textView_Question" />
+            <Button
+                android:text="Retour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/button_Retour" />
         </LinearLayout>
         
         <LinearLayout

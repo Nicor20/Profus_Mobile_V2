@@ -70,6 +70,7 @@
     <Compile Include="Montrer_Carte.cs" />
     <Compile Include="NouveauJoueur.cs" />
     <Compile Include="Parametre.cs" />
+    <Compile Include="Recap_Game.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Variables.cs" />
@@ -154,6 +155,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\NouveauJoueur.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Recap_Game.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

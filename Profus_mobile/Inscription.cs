@@ -16,9 +16,8 @@ namespace Profus_mobile
     [Activity(Label = "Inscription")]
     public class Inscription : Activity
     {
-        public int Nb_Inscrit = 0;
+        //public int Nb_Inscrit = 0;
         List<Spinner> spinner = new List<Spinner>();
-        List<int> Joueur_Inscrit = new List<int>();
         
         Button Bouton_Jouer;
 
@@ -28,7 +27,7 @@ namespace Profus_mobile
         protected override void OnRestart()
         {
             base.OnRestart();
-            Setup_Spinner(spinner[Nb_Inscrit]);
+            Setup_Spinner(spinner[Variables.Joueurs.Count()], Variables.Joueurs.Count()+1);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -41,17 +40,25 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.BoutonRetourCarte).Click += this.RetourVersModeDeJeu;
             Bouton_Jouer = FindViewById<Button>(Resource.Id.buttonJouer);
             Bouton_Jouer.Click += this.JouerAuJeu;
-
+            Variables.Joueurs.Clear();
             #region Initalisation des spinners
             spinner.Clear();
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ1));
+            spinner[0].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ2));
+            spinner[1].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ3));
+            spinner[2].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ4));
+            spinner[3].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ5));
+            spinner[4].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ6));
+            spinner[5].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ7));
+            spinner[6].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ8));
+            spinner[7].ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             #endregion
 
             Bouton_Jouer.Enabled = false;
@@ -60,13 +67,13 @@ namespace Profus_mobile
             {
                 spinner[i].Enabled = false;
             }
-            Setup_Spinner(spinner[0]);
+            Setup_Spinner(spinner[0],1);
         }
 
         void RetourVersModeDeJeu (object sender, System.EventArgs e)
         {
-           //TODO activity result pour retourner à l'activité précédente avec les mêmme choix qu'avant (mode de jeu  temporaire)
-            StartActivity(new Intent(this, typeof(Mode_de_Jeu)));
+            //TODO activity result pour retourner à l'activité précédente avec les mêmme choix qu'avant (mode de jeu  temporaire)
+            this.Finish();
         }
 
         void JouerAuJeu(object sender, System.EventArgs e)
@@ -87,26 +94,24 @@ namespace Profus_mobile
                 }
             }
             StartActivity(new Intent(this, typeof(interface_questions)));
+            this.Finish();
         }
 
 
-        private void Setup_Spinner(Spinner spin)
+        private void Setup_Spinner(Spinner spin,int numero_joueur)
         {
             List<String> Joueurs_Disponible = new List<string>();
             Joueurs_Disponible.Add("Choix du Joueur");
             Joueurs_Disponible.Add("Inscription");
 
-            
-            spin.Prompt = "Joueur #"+ (Nb_Inscrit+1);
-            spin.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-            
+            spin.Prompt = "Joueur #"+ (numero_joueur);
 
             var db = new SQLiteConnection(DB_Manager.dbPath);
             var table = db.Table<Users>();
 
             foreach (var item in table)
             {
-                if(Joueur_Inscrit.Contains(item.Numero) != true)
+                if(Variables.Joueurs.Contains(item.Numero) != true)
                 {
                     Joueurs_Disponible.Add(item.Prenom + " " + item.Nom + " (" + item.Age + ")");
                 }
@@ -121,31 +126,27 @@ namespace Profus_mobile
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
+            int Nb_Inscrit = Variables.Joueurs.Count();
+
             if (spinner[Nb_Inscrit].SelectedItem.ToString() == "Choix du Joueur")
             {
-
+                
             }
             else if (spinner[Nb_Inscrit].SelectedItem.ToString() == "Inscription")
             {
-                NouveauJoueur.Provenance = "Inscription";
                 StartActivity(new Intent(this, typeof(NouveauJoueur)));
+            }
+            else if(Nb_Inscrit<Variables.Nb_Joueur-1)
+            {
+                spinner[Nb_Inscrit].Enabled = false;
+                spinner[Nb_Inscrit+1].Enabled = true;
+                Variables.Joueurs.Add(DB_Manager.Read_User_Name(spinner[Nb_Inscrit].SelectedItem.ToString()));
+                Setup_Spinner(spinner[Nb_Inscrit+1], Nb_Inscrit + 2);
             }
             else
             {
-                Nb_Inscrit++;
-                
-                if(Nb_Inscrit >= Variables.Nb_Joueur)
-                {
-                    spinner[Nb_Inscrit-1].Enabled = false;
-                    Bouton_Jouer.Enabled = true;
-                }
-                else
-                {
-                    spinner[Nb_Inscrit - 1].Enabled = false;
-                    spinner[Nb_Inscrit].Enabled = true;
-                    Joueur_Inscrit.Add(DB_Manager.Read_User_Name(spinner[Nb_Inscrit - 1].SelectedItem.ToString()));
-                    Setup_Spinner(spinner[Nb_Inscrit]);
-                }
+                spinner[Nb_Inscrit].Enabled = false;
+                Bouton_Jouer.Enabled = true;
             }
         }
     }

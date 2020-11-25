@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -14,7 +15,6 @@ namespace Profus_mobile
     [Activity(Label = "NouveauJoueur")]
     public class NouveauJoueur : Activity
     {
-        public static string Provenance;
         TextView prenom;
         TextView nom;
         TextView age;
@@ -27,16 +27,51 @@ namespace Profus_mobile
             // Create your application here
 
             FindViewById<Button>(Resource.Id.boutonInscrire).Click += this.Inscription;
+            FindViewById<Button>(Resource.Id.boutonRetour).Click += this.Retour;
             prenom = FindViewById<TextView>(Resource.Id.editTextPreNom);
-            nom = FindViewById<TextView>(Resource.Id.editTextNom);
-            age = FindViewById<TextView>(Resource.Id.editTextAge);
+            prenom.TextChanged += this.Text_Prenom;
 
+            nom = FindViewById<TextView>(Resource.Id.editTextNom);
+            nom.TextChanged += this.Text_Nom;
+            age = FindViewById<TextView>(Resource.Id.editTextAge);
+            age.TextChanged += this.Text_Age;
 
 
         }
 
+        void Text_Prenom(object sender, System.EventArgs e)
+        {
+
+        }
+
+        void Text_Nom(object sender, System.EventArgs e)
+        {
+
+        }
+
+        void Text_Age(object sender, System.EventArgs e)
+        {
+            if(int.Parse(age.Text) > 122)
+            {
+                age.SetBackgroundColor(Android.Graphics.Color.Red);
+            }
+            else
+            {
+                age.SetBackgroundColor(Android.Graphics.Color.White);
+            }
+        }
+
+        void Retour(object sender, System.EventArgs e)
+        {
+            this.Finish();
+        }
+
         void Inscription(object sender, System.EventArgs e)
         {
+            if(prenom.Text.Length > 0 && nom.Text.Length > 0 && age.Text.Length>0)
+            {
+
+            }
             if(DB_Manager.Check_User_Exist(prenom.Text,nom.Text,Convert.ToInt32(Math.Floor(Convert.ToDecimal(age.Text)))) == false)
             {
                 DB_Manager.Create_User(prenom.Text, nom.Text, Convert.ToInt32(Math.Floor(Convert.ToDecimal(age.Text))));

@@ -49,6 +49,7 @@ namespace Profus_mobile
 
     class Questions
     {
+        [PrimaryKey]
         public int Numero { get; set; }
         public int Niveau { get; set; }
         public string Categorie { get; set; }
@@ -93,13 +94,11 @@ namespace Profus_mobile
             db.CreateTable<Questions>();
             db.CreateTable<Users>();
 
-            var table = db.Table<Questions>();
+            var question = db.Table<Questions>();
 
-            if(table.Count() == 0)
+            if(question.Count() == 0)
             {
                 //Create all
-                Toast.MakeText(context, "Pas de question dans la db", ToastLength.Long);
-                /*
                 Create_Question(1, 6, "Corps Humain", "Quelle partie du corps est affectée si une personne souffre d'un orgelet?", 1, "L'œil", "Le nez", "La bouche", "Les oreilles");
                 Create_Question(2, 6, "Divers", "Si vous faites face au soleil vers midi, en direction de quel point cardinal regardez-vous?", 2, "Nord", "Sud", "Est", "Ouest");
                 Create_Question(3, 6, "Littérature et Expressions", "Dans le conte « Le petit prince »   de St-Exupéry, quelle fleur est, paraît-il, unique au monde?", 2, "La marguerite", "La rose", "L'œillet", "La pivoine");
@@ -170,20 +169,49 @@ namespace Profus_mobile
                 Create_Question(68, 6, "Sport et Culture", "Quel joueur a été le 1er des Canadiens de Montréal et de la LNH à compter 50 buts en 50 parties et 500 buts en carrière?", 3, "Boum Boum Geoffrion", "Guy Lafleur", "Maurice Richard", "Henri Richard");
                 Create_Question(69, 6, "Sport et Culture", "Qui interprète la chanson Si jamais j’oublie?", 1, "Zaz", "Ariane Moffat", "Louane", "Jennifer");
                 Create_Question(70, 6, "Sport et Culture", "Laquelle de ces chansons n’est pas de Loud?", 1, " Alors on danse", "Toutes les femmes savent danser", "Devenir immortel (et mourir)", " Fallait y aller");
-                */
-            }
-            else if(table.Count() >0 && table.Count() <= 70)
-            {
-                Toast.MakeText(context, "70 Question dans la DB", ToastLength.Long);
-            }
-            else
-            {
-                Toast.MakeText(context, "DB entière", ToastLength.Long);
             }
         }
 
 
         #region Question
+
+        public static List<string> Create_Categorie_Question(string categorie)
+        {
+            List<string> list = new List<string>();
+            var db = new SQLiteConnection(dbPath);
+            var table = db.Table<Questions>();
+            foreach (var item in table)
+            {
+                if (item.Categorie == categorie)
+                {
+                    list.Add(item.Num_Reponse + "-|-|-" + Conversion_Question(item.Niveau, item.Question, item.Reponse1, item.Reponse2, item.Reponse3, item.Reponse4));
+                }
+            }
+            return list;
+        }
+
+        public static List<string> Create_Question_List()
+        {
+            List<string> list = new List<string>();
+            var db = new SQLiteConnection(dbPath);
+            var table = db.Table<Questions>();
+            foreach (var item in table)
+            {
+                list.Add(item.Num_Reponse + "-|-|-" + "Catégorie : " + item.Categorie + "\n" + Conversion_Question(item.Niveau, item.Question, item.Reponse1, item.Reponse2, item.Reponse3, item.Reponse4));
+            }
+            return list;
+        }
+
+        public static string Conversion_Question(int niveau,string question,string reponse1,string reponse2,string reponse3,string reponse4)
+        {
+            return "Niveau : " + (niveau <= 6 ? niveau + " année" : "Secondaire " + (niveau - 6)) +
+                   "\nQuestion : " + question +
+                   "\n\nA) " + reponse1 +
+                   "\nB) " + reponse2 +
+                   "\nC) " + reponse3 +
+                   "\nD) " + reponse4;
+        }
+
         public static void Create_Question(int numero, int niveau, string categorie, string question, int num_reponse, string reponse1, string reponse2, string reponse3, string reponse4)
         {
             var db = new SQLiteConnection(dbPath);
@@ -200,12 +228,7 @@ namespace Profus_mobile
                 if(item.Numero == numero)
                 {
                     interface_questions.Reponse = item.Num_Reponse;
-                    return "Niveau : " + (item.Niveau<=6?item.Niveau + " année": "Secondaire " + (item.Niveau-6)) +
-                           "\nQuestion : " + item.Question + 
-                           "\n\nA) " + item.Reponse1 + 
-                           "\nB) " + item.Reponse2 + 
-                           "\nC) " + item.Reponse3 + 
-                           "\nD) " + item.Reponse4;
+                    return Conversion_Question(item.Niveau, item.Question, item.Reponse1, item.Reponse2, item.Reponse3, item.Reponse4);
                 }
             }
             return "Erreur question introuvable";

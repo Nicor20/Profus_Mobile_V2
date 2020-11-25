@@ -23,29 +23,59 @@ namespace Profus_mobile
         TextView View_Question;
         public int joueur = 0;
 
+        public int nbQuestion;
+        public List<int> exclude = new List<int>();
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+
+
+
+
+
+
+
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.interface_questions);
-
+            Variables.Recap_Game.Clear();
             //Exemple d'appel pour l'affichage selon le numero
             View_Info_Joueur = FindViewById<TextView>(Resource.Id.textViewInfo_Joueur);
             View_Info_Question = FindViewById<TextView>(Resource.Id.textViewInfo_Question);
             View_Question = FindViewById<TextView>(Resource.Id.textView_Question);
 
-            View_Info_Joueur.Text = "#" + (joueur + 1) + " " + DB_Manager.Read_User_Info_By_Number(Variables.Joueurs[joueur]);
-            View_Info_Question.Text = "Question " + numero + " " + DB_Manager.Read_Question_Info_By_Number(numero);
-            View_Question.Text = DB_Manager.Read_Question_By_Number(numero);
+
 
             FindViewById<Button>(Resource.Id.buttonA).Click += this.ReponseA;
             FindViewById<Button>(Resource.Id.buttonB).Click += this.ReponseB;
             FindViewById<Button>(Resource.Id.buttonC).Click += this.ReponseC;
             FindViewById<Button>(Resource.Id.buttonD).Click += this.ReponseD;
+            FindViewById<Button>(Resource.Id.button_Retour).Click += this.Retour;
+
+            if(Variables.Mode_Jeu =="Categorie")
+            {
+                nbQuestion= Variables.List_Question_Categorie.Count();
+            }
+            else
+            {
+                nbQuestion = Variables.List_All_Question.Count();
+            }
+
+            affichage_question();
+
+
         }
 
-
-        void ReponseA(object sender, System.EventArgs e)
+        private void Retour(object sender, System.EventArgs e)
+        {
+            this.Finish();
+        }
+        private void ReponseA(object sender, System.EventArgs e)
         {
             if(Reponse == 1)
             {
@@ -57,7 +87,7 @@ namespace Profus_mobile
             }
 
         }
-        void ReponseB(object sender, System.EventArgs e)
+        private void ReponseB(object sender, System.EventArgs e)
         {
             if (Reponse == 2)
             {
@@ -68,7 +98,7 @@ namespace Profus_mobile
                 Echec();
             }
         }
-        void ReponseC(object sender, System.EventArgs e)
+        private void ReponseC(object sender, System.EventArgs e)
         {
             if (Reponse == 3)
             {
@@ -79,7 +109,7 @@ namespace Profus_mobile
                 Echec();
             }
         }
-        void ReponseD(object sender, System.EventArgs e)
+        private void ReponseD(object sender, System.EventArgs e)
         {
             if (Reponse == 4)
             {
@@ -91,15 +121,42 @@ namespace Profus_mobile
             }
         }
 
-        public void Reussi()
+        private void Reussi()
         {
             DB_Manager.Update_User(Variables.Joueurs[joueur], true);
-            Next_Question();
+            Variables.Recap_Game.Add("Question #" + numero + " : Réussi");
+            //Thread.Sleep(1000);
+
+            if (numero < nbQuestion)
+            {
+                Next_Question();
+            }
+            else
+            {
+                this.Finish();
+                StartActivity(new Intent(this, typeof(Recap_Game)));
+            }
         }
         private void Echec()
         {
             DB_Manager.Update_User(Variables.Joueurs[joueur], false);
-            Next_Question();
+            Variables.Recap_Game.Add("Question #" + numero + " : Échoué");
+            //Thread.Sleep(1000);
+
+            if (Variables.Mode_Jeu == "Mort")
+            {
+                this.Finish();
+                StartActivity(new Intent(this, typeof(Recap_Game)));
+            }
+            else if (numero < nbQuestion)
+            {
+                Next_Question();
+            }
+            else
+            {
+                this.Finish();
+                StartActivity(new Intent(this, typeof(Recap_Game)));
+            }
         }
         private void Next_Question()
         {
@@ -112,10 +169,47 @@ namespace Profus_mobile
                 joueur = 0;
             }
             numero++;
-            Task.Delay(2500).Wait();
-            View_Info_Joueur.Text = "#" + (joueur + 1) + " " + DB_Manager.Read_User_Info_By_Number(Variables.Joueurs[joueur]);
-            View_Info_Question.Text = "Question " + numero + " " + DB_Manager.Read_Question_Info_By_Number(numero);
-            View_Question.Text = DB_Manager.Read_Question_By_Number(numero);
+            
+
+            affichage_question();
+            
         }
+
+        private void affichage_question()
+        {
+            View_Info_Joueur.Text = "#" + (joueur + 1) + " " + DB_Manager.Read_User_Info_By_Number(Variables.Joueurs[joueur]);
+            if(Variables.Mode_Jeu == "Categorie")
+            {
+                View_Info_Question.Text = "Question " + numero + "/" +nbQuestion +" Catégorie : " + Variables.Categorie;
+            }
+            else
+            {
+                View_Info_Question.Text = "Question " + numero + "/" + nbQuestion;
+            }
+            string[] question = Choix_Question().Split("-|-|-");
+            Reponse = int.Parse(question[0]);
+            View_Question.Text = question[1];
+        }
+
+
+        private string Choix_Question()
+        {
+            var range = Enumerable.Range(0, nbQuestion).Where(i => !exclude.Contains(i));
+            int numero = range.ElementAt(new System.Random().Next(0, nbQuestion - exclude.Count));
+            exclude.Add(numero);
+
+            if(Variables.Mode_Jeu == "Categorie")
+            {
+                return Variables.List_Question_Categorie[numero];
+            }
+            else
+            {
+                return Variables.List_All_Question[numero];
+            }
+        }
+
+
+
+
     }
 }

@@ -1107,3 +1107,5 @@ C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\asset
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\assets\System.Xml.Linq.pdb
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\src\crc647c4441a42b754995\NouveauJoueur.java
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\recap_game.xml
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\src\crc647c4441a42b754995\Recap_Game.java

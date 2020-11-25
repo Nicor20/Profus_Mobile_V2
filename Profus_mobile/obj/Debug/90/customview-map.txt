@@ -9,6 +9,7 @@ Button;obj\Debug\90\res\layout\leaderboard.xml
 Button;obj\Debug\90\res\layout\mode_de_jeu.xml
 Button;obj\Debug\90\res\layout\montrer_carte.xml
 Button;obj\Debug\90\res\layout\nouveaujoueur.xml
+Button;obj\Debug\90\res\layout\recap_game.xml
 cache-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 cache-path;E:\Zach\Universite\S1\Projet\appli Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\values\colors.xml
@@ -20,6 +21,7 @@ external-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90
 external-path;E:\Zach\Universite\S1\Projet\appli Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+ImageView;obj\Debug\90\res\layout\activity_main.xml
 ImageView;obj\Debug\90\res\layout\montrer_carte.xml
 item;obj\Debug\90\res\values\strings.xml
 item;obj\Debug\90\res\values\styles.xml
@@ -32,6 +34,7 @@ LinearLayout;obj\Debug\90\res\layout\mode_de_jeu.xml
 LinearLayout;obj\Debug\90\res\layout\montrer_carte.xml
 LinearLayout;obj\Debug\90\res\layout\nouveaujoueur.xml
 LinearLayout;obj\Debug\90\res\layout\parametre.xml
+LinearLayout;obj\Debug\90\res\layout\recap_game.xml
 paths;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 paths;E:\Zach\Universite\S1\Projet\appli Profus\GitHub\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;obj\Debug\90\res\values\colors.xml
@@ -40,6 +43,7 @@ resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
 ScrollView;obj\Debug\90\res\layout\leaderboard.xml
 ScrollView;obj\Debug\90\res\layout\mode_de_jeu.xml
+ScrollView;obj\Debug\90\res\layout\recap_game.xml
 Space;obj\Debug\90\res\layout\activity_main.xml
 Space;obj\Debug\90\res\layout\info.xml
 Space;obj\Debug\90\res\layout\inscription.xml
@@ -63,3 +67,4 @@ TextView;obj\Debug\90\res\layout\mode_de_jeu.xml
 TextView;obj\Debug\90\res\layout\montrer_carte.xml
 TextView;obj\Debug\90\res\layout\nouveaujoueur.xml
 TextView;obj\Debug\90\res\layout\parametre.xml
+TextView;obj\Debug\90\res\layout\recap_game.xml

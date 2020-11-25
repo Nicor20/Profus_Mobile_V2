@@ -24,14 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="Entrez votre Prénom"
-        android:id="@+id/editTextPreNom" />
+        android:id="@+id/editTextPreNom"
+        android:inputType="textPersonName" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="Entrez votre nom"
-        android:id="@+id/editTextNom" />
+        android:id="@+id/editTextNom"
+        android:inputType="textPersonName" />
 
     <EditText
         android:inputType="number"
@@ -53,13 +55,13 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1" >
+        android:id="@+id/linearLayout1">
         <Button
             android:text="RETOUR"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/retourVersInscription" />
+            android:id="@+id/boutonRetour" />
         <Button
             android:text="S'INSCRIRE"
             android:layout_weight="1"
@@ -67,5 +69,5 @@
             android:layout_height="match_parent"
             android:id="@+id/boutonInscrire" />
     </LinearLayout>
-   
+
 </LinearLayout>
