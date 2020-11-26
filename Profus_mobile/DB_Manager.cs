@@ -190,16 +190,32 @@ namespace Profus_mobile
             return list;
         }
 
-        public static List<string> Create_Question_List()
+        public static void Create_Question_List(string Categorie)
         {
-            List<string> list = new List<string>();
+            Variables.Question_List.Clear();
+
             var db = new SQLiteConnection(dbPath);
             var table = db.Table<Questions>();
-            foreach (var item in table)
+            if(Categorie == "All")
             {
-                list.Add(item.Num_Reponse + "-|-|-" + "Catégorie : " + item.Categorie + "\n" + Conversion_Question(item.Niveau, item.Question, item.Reponse1, item.Reponse2, item.Reponse3, item.Reponse4));
+                foreach (var item in table)
+                {
+                    List_Questions list = new List_Questions(item.Niveau,item.Categorie, item.Question, item.Num_Reponse, item.Reponse1, item.Reponse2, item.Reponse3, item.Reponse4);
+                    Variables.Question_List.Add(list);
+                }
             }
-            return list;
+            else
+            {
+                foreach (var item in table)
+                {
+                    if(item.Categorie == Categorie)
+                    {
+                        List_Questions list = new List_Questions(item.Niveau,item.Categorie, item.Question, item.Num_Reponse, item.Reponse1, item.Reponse2, item.Reponse3, item.Reponse4);
+                        Variables.Question_List.Add(list);
+                    }
+                }
+
+            }
         }
 
         public static string Conversion_Question(int niveau,string question,string reponse1,string reponse2,string reponse3,string reponse4)

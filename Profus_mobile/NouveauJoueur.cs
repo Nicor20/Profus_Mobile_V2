@@ -30,7 +30,6 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.boutonRetour).Click += this.Retour;
             prenom = FindViewById<TextView>(Resource.Id.editTextPreNom);
             prenom.TextChanged += this.Text_Prenom;
-
             nom = FindViewById<TextView>(Resource.Id.editTextNom);
             nom.TextChanged += this.Text_Nom;
             age = FindViewById<TextView>(Resource.Id.editTextAge);
@@ -70,17 +69,21 @@ namespace Profus_mobile
         {
             if(prenom.Text.Length > 0 && nom.Text.Length > 0 && age.Text.Length>0)
             {
-
-            }
-            if(DB_Manager.Check_User_Exist(prenom.Text,nom.Text,Convert.ToInt32(Math.Floor(Convert.ToDecimal(age.Text)))) == false)
-            {
-                DB_Manager.Create_User(prenom.Text, nom.Text, Convert.ToInt32(Math.Floor(Convert.ToDecimal(age.Text))));
-                this.Finish();
+                if(DB_Manager.Check_User_Exist(prenom.Text,nom.Text,Convert.ToInt32(Math.Floor(Convert.ToDecimal(age.Text)))) == false)
+                {
+                    DB_Manager.Create_User(prenom.Text, nom.Text, Convert.ToInt32(Math.Floor(Convert.ToDecimal(age.Text))));
+                    this.Finish();
+                }
+                else
+                {
+                    Toast.MakeText(this, "L'utilisateur existe déja", ToastLength.Long);
+                }
             }
             else
             {
-                Toast.MakeText(this, "L'utilisateur existe déja", ToastLength.Long);
+                Toast.MakeText(this, "Veillez remplir tout les zone", ToastLength.Long);
             }
+            
         }
 
     }

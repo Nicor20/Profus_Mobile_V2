@@ -95,12 +95,14 @@ namespace Profus_mobile
         {
             if(Variables.Mode_Jeu == "Categorie")
             {
-                Variables.List_Question_Categorie = DB_Manager.Create_Categorie_Question(Spinner_Carte.SelectedItem.ToString());
+                //Population de la list question
+                DB_Manager.Create_Question_List(Spinner_Carte.SelectedItem.ToString());
                 Variables.Categorie = Spinner_Carte.SelectedItem.ToString();
             }
             else if(Variables.Mode_Jeu == "Montre")
             {
-                Variables.List_All_Question = DB_Manager.Create_Question_List();
+                DB_Manager.Create_Question_List("All");
+
                 string[] list = Spinner_Carte.SelectedItem.ToString().Split(" ");
                 if(list[1] == "secondes")
                 {
@@ -113,7 +115,7 @@ namespace Profus_mobile
             }
             else
             {
-                Variables.List_All_Question = DB_Manager.Create_Question_List();
+                DB_Manager.Create_Question_List("All");
             }
             StartActivity(new Intent(this, typeof(Inscription)));
         }

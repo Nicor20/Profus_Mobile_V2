@@ -18,11 +18,10 @@ namespace Profus_mobile
     {
         //public int Nb_Inscrit = 0;
         List<Spinner> spinner = new List<Spinner>();
-        
+
+        List<string> Joueur_Choisi = new List<string>();
+
         Button Bouton_Jouer;
-
-
-
 
         protected override void OnRestart()
         {
@@ -80,7 +79,7 @@ namespace Profus_mobile
         {
             var db = new SQLiteConnection(DB_Manager.dbPath);
             var table = db.Table<Users>();
-            Variables.Joueurs.Clear();
+            Variables.Game_Player.Clear();
 
             for (int i = 0; i < Variables.Nb_Joueur;i++)
             {
@@ -89,7 +88,8 @@ namespace Profus_mobile
                     string text = item.Prenom + " " + item.Nom + " (" + item.Age + ")";
                     if(spinner[i].SelectedItem.ToString() == text)
                     {
-                        Variables.Joueurs.Add(item.Numero);
+                        Player_Game player = new Player_Game(item.Numero, item.Prenom, item.Nom, item.Age, 0, 0);
+                        Variables.Game_Player.Add(player);
                     }
                 }
             }
@@ -100,24 +100,22 @@ namespace Profus_mobile
 
         private void Setup_Spinner(Spinner spin,int numero_joueur)
         {
-            List<String> Joueurs_Disponible = new List<string>();
+            spin.Prompt = "Joueur #"+ (numero_joueur);
+            List<string> Joueurs_Disponible = new List<string>();
             Joueurs_Disponible.Add("Choix du Joueur");
             Joueurs_Disponible.Add("Inscription");
 
-            spin.Prompt = "Joueur #"+ (numero_joueur);
-
             var db = new SQLiteConnection(DB_Manager.dbPath);
             var table = db.Table<Users>();
-
             foreach (var item in table)
             {
-                if(Variables.Joueurs.Contains(item.Numero) != true)
+                string text = item.Prenom + " " + item.Nom + " (" + item.Age + ")";
+                if(Joueur_Choisi.Contains(text) != true)
                 {
-                    Joueurs_Disponible.Add(item.Prenom + " " + item.Nom + " (" + item.Age + ")");
+                    Joueurs_Disponible.Add(text);
                 }
             }
 
-            
             var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, Joueurs_Disponible);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spin.Adapter = adapter;
@@ -126,7 +124,7 @@ namespace Profus_mobile
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            int Nb_Inscrit = Variables.Joueurs.Count();
+            int Nb_Inscrit = Joueur_Choisi.Count();
 
             if (spinner[Nb_Inscrit].SelectedItem.ToString() == "Choix du Joueur")
             {
@@ -136,11 +134,11 @@ namespace Profus_mobile
             {
                 StartActivity(new Intent(this, typeof(NouveauJoueur)));
             }
-            else if(Nb_Inscrit<Variables.Nb_Joueur-1)
+            else if(Nb_Inscrit < Variables.Nb_Joueur-1)
             {
                 spinner[Nb_Inscrit].Enabled = false;
                 spinner[Nb_Inscrit+1].Enabled = true;
-                Variables.Joueurs.Add(DB_Manager.Read_User_Name(spinner[Nb_Inscrit].SelectedItem.ToString()));
+                Joueur_Choisi.Add(spinner[Nb_Inscrit].SelectedItem.ToString());
                 Setup_Spinner(spinner[Nb_Inscrit+1], Nb_Inscrit + 2);
             }
             else
