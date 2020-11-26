@@ -15,7 +15,6 @@ namespace Profus_mobile
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
             #region Initialisation des boutons
@@ -30,9 +29,8 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.Bouton_Info).Enabled = false;
             FindViewById<Button>(Resource.Id.Bouton_Parametre).Enabled = false;
 
-            #region Creation DB
-            DB_Manager.Create_DB(this);
-            #endregion
+            //Création de la Db
+            DB_Manager.Start_DB();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -44,7 +42,7 @@ namespace Profus_mobile
 
         void Jouer(object sender, System.EventArgs e)
         {
-            StartActivity(new Intent(this, typeof(Mode_de_Jeu)));
+            StartActivity(new Intent(this, typeof(Options_Jeu)));
         }
 
         void Inscription(object sender, System.EventArgs e)
@@ -61,8 +59,7 @@ namespace Profus_mobile
         {
             StartActivity(new Intent(this, typeof(Parametre)));
         }
-
-       
+     
         void Score(object sender, System.EventArgs e)
         {
             StartActivity(new Intent(this, typeof(Leaderboard)));

@@ -16,28 +16,40 @@ namespace Profus_mobile
     [Activity(Label = "Leaderboard", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Leaderboard : Activity
     {
-        TextView score;
+        TextView prenom;
+        TextView nom;
+        TextView age;
+        TextView reussi;
+        TextView echec;
+        TextView resultat;
+        TextView max_mort;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.Leaderboard);
-            score = FindViewById<TextView>(Resource.Id.textViewScore);
-            score.Text = "Prenom        | Nom             | Age  | Réussi | Échoué | Résultat\n";
-            score.Text += "----------------------------------------------------------------------\n";
+            prenom = FindViewById<TextView>(Resource.Id.textViewPrenom);
+            nom = FindViewById<TextView>(Resource.Id.textViewNom);
+            age = FindViewById<TextView>(Resource.Id.textViewAge);
+            reussi = FindViewById<TextView>(Resource.Id.textViewReussi);
+            echec = FindViewById<TextView>(Resource.Id.textViewEchec);
+            resultat = FindViewById<TextView>(Resource.Id.textViewResultat);
+            max_mort = FindViewById<TextView>(Resource.Id.textViewMax_mort);
+
+            prenom.Text = "Prenom\n";
+            nom.Text = "Nom\n";
+            age.Text = "Age\n";
+            reussi.Text = "Réussi\n";
+            echec.Text = "Échoué\n";
+            resultat.Text = "Résultat\n";
+            max_mort.Text = "Max Mort\n";
             Display_Score();
             FindViewById<Button>(Resource.Id.buttonRetour).Click += this.Retour;
-
-
-
-
-
-            // Create your application here
         }
 
         void Retour(object sender, System.EventArgs e)
         {
-            this.Finish();
+            Finish();
         }
 
         void Display_Score()
@@ -46,22 +58,28 @@ namespace Profus_mobile
             var table = db.Table<Users>();
             foreach (var item in table)
             {
-                string resultat;
+                string pourcentage;
                 if(item.Reussi != 0 && item.Echec == 0)
                 {
-                    resultat = "100.00%";
+                    pourcentage = "100.00%";
                 }
                 else if(item.Reussi == 0 && item.Echec == 0)
                 {
-                    resultat = "NaN";
+                    pourcentage = "NaN";
                 }
                 else
                 {
-                    resultat = (((float)item.Reussi / ((float)item.Reussi + (float)item.Echec)) * 100.0).ToString("0.00") + "%";
+                    pourcentage = (((float)item.Reussi / ((float)item.Reussi + (float)item.Echec)) * 100.0).ToString("0.00") + "%";
                 }
-                score.Text +="\n" + String.Format("{0,-15} | {1,-15} | {2,-5} | {3,-11} | {4,-11} | {5,-7}",item.Prenom,item.Nom,item.Age,item.Reussi,item.Echec,resultat);
+
+                prenom.Text += "\n" + item.Prenom;
+                nom.Text += "\n" + item.Nom;
+                age.Text += "\n" + item.Age;
+                reussi.Text += "\n" + item.Reussi;
+                echec.Text += "\n" + item.Echec;
+                resultat.Text += "\n" + pourcentage;
+                max_mort.Text += "\n" + item.Max_Mort;
             }
         }
-
     }
 }

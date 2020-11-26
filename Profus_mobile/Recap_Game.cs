@@ -15,6 +15,7 @@ namespace Profus_mobile
     [Activity(Label = "Recap_Game", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Recap_Game : Activity
     {
+        TextView Affichage;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,13 +25,30 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.button_Rejouer).Click += this.Rejouer;
 
 
+            Affichage = FindViewById<TextView>(Resource.Id.textView1);
+            Affichage.Text = "";
 
-
-
-            FindViewById<TextView>(Resource.Id.textView1).Text = "";
-            foreach (var item in Variables.Recap_Game)
+            if(Variables.Mode_Jeu == "Mort")
             {
-                FindViewById<TextView>(Resource.Id.textView1).Text += item + "\n";
+                Affichage.Text = Variables.List_Joueur[0].Prenom + " " + Variables.List_Joueur[0].Nom + "\nNombre de bonne réponse : " + Variables.List_Joueur[0].Max_Mort;
+            }
+            else
+            {
+                int i = 1;
+                foreach(var player in Variables.List_Joueur)
+                {
+                    Affichage.Text += "J" + i + " - " + player.Prenom + " " + player.Nom + "\n";
+                    Affichage.Text += "Nombre réussi = " + player.Reussi + "\n";
+                    Affichage.Text += "Nombre échoué = " + player.Echec + "\n";
+                    i++;
+                }
+                Affichage.Text += "\n";
+                Affichage.Text += "Résumé des questions\n";
+                Affichage.Text += "\n";
+                foreach (var item in Variables.Recap_Game)
+                {
+                    Affichage.Text += item + "\n";
+                }
             }
         }
 

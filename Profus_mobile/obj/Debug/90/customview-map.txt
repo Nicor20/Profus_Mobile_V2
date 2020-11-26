@@ -9,8 +9,11 @@ Button;obj\Debug\90\res\layout\leaderboard.xml
 Button;obj\Debug\90\res\layout\mode_de_jeu.xml
 Button;obj\Debug\90\res\layout\montrer_carte.xml
 Button;obj\Debug\90\res\layout\nouveaujoueur.xml
+Button;obj\Debug\90\res\layout\options_jeu.xml
+Button;obj\Debug\90\res\layout\popup.xml
 Button;obj\Debug\90\res\layout\recap_game.xml
 cache-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\36\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+CheckBox;obj\Debug\90\res\layout\montrer_carte.xml
 color;obj\Debug\90\res\values\colors.xml
 color;obj\Debug\90\res\values\ic_launcher_background.xml
 EditText;obj\Debug\90\res\layout\nouveaujoueur.xml
@@ -20,6 +23,7 @@ foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 ImageView;obj\Debug\90\res\layout\activity_main.xml
 ImageView;obj\Debug\90\res\layout\montrer_carte.xml
+ImageView;obj\Debug\90\res\layout\options_jeu.xml
 item;obj\Debug\90\res\values\strings.xml
 item;obj\Debug\90\res\values\styles.xml
 LinearLayout;obj\Debug\90\res\layout\activity_main.xml
@@ -30,9 +34,15 @@ LinearLayout;obj\Debug\90\res\layout\leaderboard.xml
 LinearLayout;obj\Debug\90\res\layout\mode_de_jeu.xml
 LinearLayout;obj\Debug\90\res\layout\montrer_carte.xml
 LinearLayout;obj\Debug\90\res\layout\nouveaujoueur.xml
+LinearLayout;obj\Debug\90\res\layout\options_jeu.xml
 LinearLayout;obj\Debug\90\res\layout\parametre.xml
+LinearLayout;obj\Debug\90\res\layout\popup.xml
 LinearLayout;obj\Debug\90\res\layout\recap_game.xml
 paths;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\36\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+RadioButton;obj\Debug\90\res\layout\montrer_carte.xml
+RadioButton;obj\Debug\90\res\layout\options_jeu.xml
+RadioGroup;obj\Debug\90\res\layout\montrer_carte.xml
+RadioGroup;obj\Debug\90\res\layout\options_jeu.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
@@ -46,9 +56,11 @@ Space;obj\Debug\90\res\layout\leaderboard.xml
 Space;obj\Debug\90\res\layout\mode_de_jeu.xml
 Space;obj\Debug\90\res\layout\montrer_carte.xml
 Space;obj\Debug\90\res\layout\nouveaujoueur.xml
+Space;obj\Debug\90\res\layout\options_jeu.xml
 Space;obj\Debug\90\res\layout\parametre.xml
 Spinner;obj\Debug\90\res\layout\inscription.xml
 Spinner;obj\Debug\90\res\layout\montrer_carte.xml
+Spinner;obj\Debug\90\res\layout\options_jeu.xml
 string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml
@@ -59,5 +71,7 @@ TextView;obj\Debug\90\res\layout\leaderboard.xml
 TextView;obj\Debug\90\res\layout\mode_de_jeu.xml
 TextView;obj\Debug\90\res\layout\montrer_carte.xml
 TextView;obj\Debug\90\res\layout\nouveaujoueur.xml
+TextView;obj\Debug\90\res\layout\options_jeu.xml
 TextView;obj\Debug\90\res\layout\parametre.xml
+TextView;obj\Debug\90\res\layout\popup.xml
 TextView;obj\Debug\90\res\layout\recap_game.xml

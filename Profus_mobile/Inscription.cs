@@ -16,9 +16,7 @@ namespace Profus_mobile
     [Activity(Label = "Inscription", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class Inscription : Activity
     {
-        //public int Nb_Inscrit = 0;
         List<Spinner> spinner = new List<Spinner>();
-
         List<string> Joueur_Choisi = new List<string>();
 
         Button Bouton_Jouer;
@@ -35,11 +33,14 @@ namespace Profus_mobile
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.Inscription);
 
-            // Create your application here
             FindViewById<Button>(Resource.Id.BoutonRetourCarte).Click += this.RetourVersModeDeJeu;
             Bouton_Jouer = FindViewById<Button>(Resource.Id.buttonJouer);
             Bouton_Jouer.Click += this.JouerAuJeu;
             Variables.Joueurs.Clear();
+
+
+
+
             #region Initalisation des spinners
             spinner.Clear();
             spinner.Add(FindViewById<Spinner>(Resource.Id.spinnerJ1));
@@ -79,17 +80,17 @@ namespace Profus_mobile
         {
             var db = new SQLiteConnection(DB_Manager.dbPath);
             var table = db.Table<Users>();
-            Variables.Game_Player.Clear();
+            Variables.List_Joueur.Clear();
 
-            for (int i = 0; i < Variables.Nb_Joueur;i++)
+            for (int i = 0; i < Variables.NbJoueur;i++)
             {
                 foreach (var item in table)
                 {
                     string text = item.Prenom + " " + item.Nom + " (" + item.Age + ")";
                     if(spinner[i].SelectedItem.ToString() == text)
                     {
-                        Player_Game player = new Player_Game(item.Numero, item.Prenom, item.Nom, item.Age, 0, 0);
-                        Variables.Game_Player.Add(player);
+                        Users player = new Users(item.Numero, item.Prenom, item.Nom, item.Age, 0, 0, 0);
+                        Variables.List_Joueur.Add(player);
                     }
                 }
             }
@@ -115,7 +116,6 @@ namespace Profus_mobile
                     Joueurs_Disponible.Add(text);
                 }
             }
-
             var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, Joueurs_Disponible);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spin.Adapter = adapter;
@@ -134,7 +134,7 @@ namespace Profus_mobile
             {
                 StartActivity(new Intent(this, typeof(NouveauJoueur)));
             }
-            else if(Nb_Inscrit < Variables.Nb_Joueur-1)
+            else if(Nb_Inscrit < Variables.NbJoueur-1)
             {
                 spinner[Nb_Inscrit].Enabled = false;
                 spinner[Nb_Inscrit+1].Enabled = true;

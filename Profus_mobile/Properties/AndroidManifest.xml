@@ -7,7 +7,7 @@
 		<activity android:label="@string/app_name" android:name="Leaderboard"></activity>
 		<activity android:label="@string/app_name" android:name="Mode_de_Jeu"></activity>
 		<activity android:label="@string/app_name" android:name="Parametre"></activity>
-		<activity android:label="@string/app_name" android:name="Montrer_Carte"></activity>
+		<activity android:label="@string/app_name" android:name="Options_Jeu"></activity>
 		<activity android:label="@string/app_name" android:name="interface_questions"></activity>
 		<activity android:label="@string/app_name" android:name="NouveauJoueur"></activity>
 		<activity android:label="@string/app_name" android:name="Recap_Game"></activity>

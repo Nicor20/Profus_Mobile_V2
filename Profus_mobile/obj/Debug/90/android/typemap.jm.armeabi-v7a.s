@@ -1,4 +1,4 @@
-	/* Data Hash: 910A7671279D9BBA */
+	/* Data Hash: B2A6CE6A8F3C6458 */
 	.arch	armv7-a
 	.syntax unified
 	.eabi_attribute 67, "2.09"	@ Tag_conformance
@@ -31,7 +31,7 @@ jm_typemap_header:
 	/* version */
 	.long	1
 	/* entry-count */
-	.long	1043
+	.long	1042
 	/* entry-length */
 	.long	262
 	/* value-offset */
@@ -42,5 +42,5 @@ jm_typemap_header:
 	.type	jm_typemap, %object
 	.global	jm_typemap
 jm_typemap:
-	.size	jm_typemap, 273267
+	.size	jm_typemap, 273005
 	.include	"typemap.jm.inc"

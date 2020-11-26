@@ -869,12 +869,10 @@ C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\mipmap-xx
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\mipmap-xxxhdpi\ic_launcher.png
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\mipmap-xxxhdpi\ic_launcher_foreground.png
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\mipmap-xxxhdpi\ic_launcher_round.png
-C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\mode_de_jeu.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\parametre.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\info.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\inscription.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\leaderboard.xml
-C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\montrer_carte.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\interface_questions.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\nouveaujoueur.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\recap_game.xml
@@ -1108,3 +1106,6 @@ C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_Conver
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\options_jeu.xml
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\src\crc647c4441a42b754995\Options_Jeu.java
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\popup.xml

@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="70"
-            android:id="@+id/linearLayout4" >
+            android:id="@+id/linearLayout4">
             <TextView
                 android:text="Numero Joueur + Nom"
                 android:gravity="center"
@@ -61,12 +61,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="83"
                 android:id="@+id/textView_Question" />
-            <Button
-                android:text="Retour"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:id="@+id/button_Retour" />
+                android:layout_weight="4"
+                android:id="@+id/linearLayout5">
+                <Button
+                    android:text="Retour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/button_Retour" />
+                <Button
+                    android:text="Terminé"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/button_Terminer" />
+            </LinearLayout>
         </LinearLayout>
         
         <LinearLayout

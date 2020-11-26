@@ -11,31 +11,34 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
+using static Android.App.ActionBar;
 
 namespace Profus_mobile
 {
     [Activity(Label = "interface_questions", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]
     public class interface_questions : Activity
     {
+
         //https://forums.xamarin.com/discussion/172326/how-to-make-a-bluetooth-connection-classic-bluetooth-crash-on-connect
         //https://stackoverflow.com/questions/17300744/how-to-implement-countdowntimer-class-in-xamarin-c-sharp-android/17301154
 
-        public static int Reponse;
-        public int numero = 1;
+        private int Num_Reponse;
+        private int Num_Question = 0;
+        private int Num_Joueur = 0;
+        public int Num_Question_List;
+
+        private int NbQuestion;
+        private int NbJoueur;
+
         TextView View_Info_Joueur;
         TextView View_Info_Question;
         TextView View_Question;
-        public int joueur = 0;
 
-        public int nbQuestion;
         public List<int> exclude = new List<int>();
-        public List<int> Pos_reponse = new List<int>();
-
-        public int[] pos = new int[4];
-
-        public int Num_Question_List;
-        public int bouton_click;
-
+        Dialog pop;
+        System.Timers.Timer time;
+        bool finGame = false;
 
         protected override void OnDestroy()
         {
@@ -55,207 +58,219 @@ namespace Profus_mobile
             View_Info_Question = FindViewById<TextView>(Resource.Id.textViewInfo_Question);
             View_Question = FindViewById<TextView>(Resource.Id.textView_Question);
 
-            FindViewById<Button>(Resource.Id.buttonA).Click += this.Bouton_A;
-            FindViewById<Button>(Resource.Id.buttonB).Click += this.Bouton_B;
-            FindViewById<Button>(Resource.Id.buttonC).Click += this.Bouton_C;
-            FindViewById<Button>(Resource.Id.buttonD).Click += this.Bouton_D;
-            FindViewById<Button>(Resource.Id.button_Retour).Click += this.Retour;
+            FindViewById<Button>(Resource.Id.buttonA).Click += Bouton_A;
+            FindViewById<Button>(Resource.Id.buttonB).Click += Bouton_B;
+            FindViewById<Button>(Resource.Id.buttonC).Click += Bouton_C;
+            FindViewById<Button>(Resource.Id.buttonD).Click += Bouton_D;
+            FindViewById<Button>(Resource.Id.button_Retour).Click += Retour;
+            FindViewById<Button>(Resource.Id.button_Terminer).Click += Terminer;
 
-            nbQuestion = Variables.Question_List.Count();
+            NbQuestion = Variables.List_Question.Count();
+            NbJoueur = Variables.List_Joueur.Count();
 
-            affichage_question();
+            Choisir_Question();
+            Afficher_Question();
         }
 
-        private void Retour(object sender, System.EventArgs e)
+        private void Terminer(object sender, EventArgs e)
         {
-            this.Finish();
+            Fin_Partie();
         }
-        private void Bouton_A(object sender, System.EventArgs e)
+
+        private void Retour(object sender, EventArgs e)
         {
-            bouton_click = 1;
-            if (Reponse == 1)
+            Finish();
+        }
+        private void Bouton_A(object sender, EventArgs e)
+        {
+            if (Num_Reponse == 1)
             {
-                Reponse_bon_faux(true);
+                Reponse_bon_faux(true,1);
             }
             else
             {
-                Reponse_bon_faux(false);
+                Reponse_bon_faux(false,1);
             }
         }
-        private void Bouton_B(object sender, System.EventArgs e)
+        private void Bouton_B(object sender, EventArgs e)
         {
-            bouton_click = 2;
-            if (Reponse == 2)
+            if (Num_Reponse == 2)
             {
-                Reponse_bon_faux(true);
+                Reponse_bon_faux(true,2);
             }
             else
             {
-                Reponse_bon_faux(false);
+                Reponse_bon_faux(false,2);
             }
         }
-        private void Bouton_C(object sender, System.EventArgs e)
+        private void Bouton_C(object sender, EventArgs e)
         {
-            bouton_click = 3;
-            if (Reponse == 3)
+            if (Num_Reponse == 3)
             {
-                Reponse_bon_faux(true);
+                Reponse_bon_faux(true,3);
             }
             else
             {
-                Reponse_bon_faux(false);
+                Reponse_bon_faux(false,3);
             }
         }
-        private void Bouton_D(object sender, System.EventArgs e)
+        private void Bouton_D(object sender, EventArgs e)
         {
-            bouton_click = 4;
-            if (Reponse == 4)
+            if (Num_Reponse == 4)
             {
-                Reponse_bon_faux(true);
+                Reponse_bon_faux(true,4);
             }
             else
             {
-                Reponse_bon_faux(false);
+                Reponse_bon_faux(false,4);
             }
         }
 
-
-        private void Reponse_bon_faux(bool rep)
+        private void Reponse_bon_faux(bool rep,int bouton)
         {
-            if(rep == true)
+            Recap_Game(rep,bouton);
+            if (Variables.Mode_Jeu == "Mort")
             {
-                Variables.Game_Player[joueur].Reussi++;
+                if(rep == true && Num_Question < NbQuestion)
+                {
+                    Variables.List_Joueur[Num_Joueur].Max_Mort++;
+                    Changer_Joueur();
+                    Choisir_Question();
+                    Afficher_Question();
+                }
+                else
+                {
+                    Fin_Partie();
+                }
             }
             else
             {
-                Variables.Game_Player[joueur].Echec++;
+                if(rep == true && Num_Question < NbQuestion)
+                {
+                    Variables.List_Joueur[Num_Joueur].Reussi++;
+                    Changer_Joueur();
+                    Choisir_Question();
+                    Afficher_Question();
+                    Popup("Bonne réponse!");
+                }
+                else if(rep == false && Num_Question < NbQuestion)
+                {
+                    Variables.List_Joueur[Num_Joueur].Echec++;
+                    Changer_Joueur();
+                    Choisir_Question();
+                    Afficher_Question();
+                    Popup("Mauvaise réponse!");
+                }
+                else
+                {
+                    finGame = true;
+                }
             }
-            Recap_Game(rep);
-
-            if(rep == false && Variables.Mode_Jeu == "Mort")
-            {
-                this.Finish();
-                StartActivity(new Intent(this, typeof(Recap_Game)));
-            }
-            else if(numero < nbQuestion)
-            {
-                Next_Question();
-            }
-            else
-            {
-                this.Finish();
-                StartActivity(new Intent(this, typeof(Recap_Game)));
-            }
-            //byte t = Convert.to;
         }
 
-        private void Next_Question()
+        private void Changer_Joueur()
         {
-            if (joueur < Variables.Nb_Joueur-1)
+            if (Num_Joueur < NbJoueur-1)
             {
-                joueur++;
+                Num_Joueur++;
             }
             else
             {
-                joueur = 0;
+                Num_Joueur = 0;
             }
-            numero++;
-            
-            affichage_question();
         }
 
-        private void affichage_question()
+        private void Choisir_Question()
         {
-            View_Info_Joueur.Text = "J" + (joueur + 1) + " - " + Variables.Game_Player[joueur].Prenom + " " + Variables.Game_Player[joueur].Nom + " (" + Variables.Game_Player[joueur].Age + ")";
-            Num_Question_List = Choix_Question();
+            Num_Question++;
+            var range = Enumerable.Range(0, NbQuestion).Where(i => !exclude.Contains(i));
+            Num_Question_List = range.ElementAt(new Random().Next(0, NbQuestion - exclude.Count()));
+            exclude.Add(Num_Question_List);
+            Num_Reponse = Variables.List_Question[Num_Question_List].Num_Reponse;
+        }
 
-            View_Info_Question.Text = "Question " + numero + "/" + nbQuestion + " (" + Variables.Question_List[Num_Question_List].Categorie + ")";
-            Reponse = Variables.Question_List[Num_Question_List].Num_Reponse;
-
-
-
-            View_Question.Text = "Niveau : " + Variables.Question_List[Num_Question_List].Niveau + "\n";
-            View_Question.Text += "Question : " + Variables.Question_List[Num_Question_List].Question + "\n";
+        private void Afficher_Question()
+        {
+            View_Info_Joueur.Text = "J" + (Num_Joueur + 1) + " - " + Variables.List_Joueur[Num_Joueur].Prenom + " " + Variables.List_Joueur[Num_Joueur].Nom + " (" + Variables.List_Joueur[Num_Joueur].Age + ")";
+            View_Info_Question.Text = "Question " + Num_Question + "/" + NbQuestion + " (" + Variables.List_Question[Num_Question_List].Categorie + ")";
+            View_Question.Text = "Niveau : " + Variables.List_Question[Num_Question_List].Niveau + "\n";
+            View_Question.Text += "Question : " + Variables.List_Question[Num_Question_List].Question + "\n";
             View_Question.Text += "\n";
-            View_Question.Text += "A) " + Rep_At_Pos(1, Num_Question_List) + "\n";
-            View_Question.Text += "B) " + Rep_At_Pos(2, Num_Question_List) + "\n";
-            View_Question.Text += "C) " + Rep_At_Pos(3, Num_Question_List) + "\n";
-            View_Question.Text += "D) " + Rep_At_Pos(4, Num_Question_List) + "\n";
-
-            /*
-            Choix_Pos_Reponse();
-            Reponse = Pos_reponse[Variables.Question_List[Num_Question_List].Num_Reponse - 1];
-            Log.Info("réponse", "Réponse était  " + Variables.Question_List[Num_Question_List].Num_Reponse + " Maintenant " + Reponse);
-
-            View_Question.Text = "Niveau : " + Variables.Question_List[Num_Question_List].Niveau + "\n";
-            View_Question.Text += "Question : " + Variables.Question_List[Num_Question_List].Question + "\n";
-            View_Question.Text += "\n";
-            View_Question.Text += "A) " + Rep_At_Pos(Pos_reponse[0], Num_Question_List) + "\n";
-            View_Question.Text += "B) " + Rep_At_Pos(Pos_reponse[1], Num_Question_List) + "\n";
-            View_Question.Text += "C) " + Rep_At_Pos(Pos_reponse[2], Num_Question_List) + "\n";
-            View_Question.Text += "D) " + Rep_At_Pos(Pos_reponse[3], Num_Question_List) + "\n";
-            */
-        }
-
-        private int Choix_Question()
-        {
-            var range = Enumerable.Range(0, nbQuestion).Where(i => !exclude.Contains(i));
-            int numero = range.ElementAt(new System.Random().Next(0, nbQuestion - exclude.Count));
-            exclude.Add(numero);
-
-            return numero;
-        }
-
-        private void Choix_Pos_Reponse()
-        {
-            List<int> ex = new List<int>();
-            Pos_reponse.Clear();
-
-            for(int i = 0;i<4;i++)
-            {
-                var range = Enumerable.Range(1, 4).Where(i => !ex.Contains(i));
-                int numero = range.ElementAt(new System.Random().Next(0, 4 - ex.Count));
-                ex.Add(numero);
-                Pos_reponse.Add(numero);
-                pos[i] = numero;
-                Log.Info("Aléatoire", "Question " + (i+1) + " = position " + numero);
-            }
+            View_Question.Text += "A) " + Variables.List_Question[Num_Question_List].Reponse1 + "\n";
+            View_Question.Text += "B) " + Variables.List_Question[Num_Question_List].Reponse2 + "\n";
+            View_Question.Text += "C) " + Variables.List_Question[Num_Question_List].Reponse3 + "\n";
+            View_Question.Text += "D) " + Variables.List_Question[Num_Question_List].Reponse4 + "\n";
         }
 
         private string Rep_At_Pos(int pos,int question)
         {
             if(pos == 1)
             {
-                return Variables.Question_List[question].Reponse1;
+                return Variables.List_Question[question].Reponse1;
             }
             else if(pos == 2)
             {
-                return Variables.Question_List[question].Reponse2;
+                return Variables.List_Question[question].Reponse2;
             }
             else if(pos == 3)
             {
-                return Variables.Question_List[question].Reponse3;
+                return Variables.List_Question[question].Reponse3;
             }
             else
             {
-                return Variables.Question_List[question].Reponse4;
+                return Variables.List_Question[question].Reponse4;
             }
         }
 
-        private void Recap_Game(bool rep)
+        private void Recap_Game(bool rep,int button)
         {
-            string text = "Question #" + numero + " = " + (rep==true? "Réussi" : "Échoué" ) + "\n";
-            text += Variables.Question_List[Num_Question_List].Question + "\n";
-            text += "Réponse choisi : " + Rep_At_Pos(bouton_click, Num_Question_List) + "\n";
-            text += "Bonne réponse : " + Rep_At_Pos(Reponse, Num_Question_List) + "\n";
+            string text = "Question #" + Num_Question + " = " + (rep==true? "Réussi" : "Échoué" ) + "\n";
+            text += Variables.List_Question[Num_Question_List].Question + "\n";
+            text += "Réponse choisi : " + Rep_At_Pos(button, Num_Question_List) + "\n";
+            text += "Bonne réponse : " + Rep_At_Pos(Num_Reponse, Num_Question_List) + "\n";
 
-
-            /*
-            text += "Réponse choisi : " + Rep_At_Pos(Pos_reponse[bouton_click-1], Num_Question_List) + "\n";
-            text += "Bonne réponse : " + Rep_At_Pos(Pos_reponse[Reponse-1], Num_Question_List) + "\n";
-            */
             Variables.Recap_Game.Add(text);
         }
 
+
+        private void Fin_Partie()
+        {
+            foreach(var player in Variables.List_Joueur)
+            {
+                DB_Manager.Update_User(player.Numero, player.Reussi, player.Echec, player.Max_Mort);
+            }
+            Finish();
+            StartActivity(new Intent(this, typeof(Recap_Game)));
+        }
+
+        private void Popup(string Resultat)
+        {
+            pop = new Dialog(this);
+            pop.SetContentView(Resource.Layout.Popup);
+            pop.Window.SetSoftInputMode(SoftInput.AdjustResize);
+            pop.Window.SetLayout(LayoutParams.MatchParent, LayoutParams.WrapContent);
+            pop.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
+            pop.FindViewById<TextView>(Resource.Id.textViewResultat).Text = Resultat;
+            pop.Show();
+            time = new System.Timers.Timer(2000);
+            time.Elapsed += ClosePopup;
+            time.AutoReset = false;
+            time.Enabled = true;
+
+        }
+
+        public void ClosePopup(Object source, ElapsedEventArgs e)
+        {   
+            if(finGame == true)
+            {
+                Fin_Partie();
+            }
+            time.Stop();
+            time.Dispose();
+            pop.Dismiss();
+            pop.Hide();
+
+
+        }
     }
 }
