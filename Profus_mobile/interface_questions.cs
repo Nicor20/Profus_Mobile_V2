@@ -133,7 +133,9 @@ namespace Profus_mobile
             {
                 if(rep == true && Num_Question < NbQuestion)
                 {
+                    Log.Info("Avant", Variables.List_Joueur[Num_Joueur].Max_Mort.ToString());
                     Variables.List_Joueur[Num_Joueur].Max_Mort++;
+                    Log.Info("Après", Variables.List_Joueur[Num_Joueur].Max_Mort.ToString());
                     Changer_Joueur();
                     Choisir_Question();
                     Afficher_Question();
@@ -163,6 +165,16 @@ namespace Profus_mobile
                 }
                 else
                 {
+                    if(rep == true)
+                    {
+                        Variables.List_Joueur[Num_Joueur].Reussi++;
+                        Popup("Bonne réponse!");
+                    }
+                    else
+                    {
+                        Variables.List_Joueur[Num_Joueur].Echec++;
+                        Popup("Mauvaise réponse!");
+                    }
                     finGame = true;
                 }
             }
@@ -237,10 +249,11 @@ namespace Profus_mobile
         {
             foreach(var player in Variables.List_Joueur)
             {
-                DB_Manager.Update_User(player.Numero, player.Reussi, player.Echec, player.Max_Mort);
+                DB_Manager.Update_User(player.Numero, player.Prenom, player.Nom, player.Age, player.Reussi, player.Echec, player.Max_Mort);
             }
-            Finish();
+            
             StartActivity(new Intent(this, typeof(Recap_Game)));
+            Finish();
         }
 
         private void Popup(string Resultat)

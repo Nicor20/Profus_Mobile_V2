@@ -78,7 +78,7 @@ namespace Profus_mobile
                 reussi.Text += "\n" + item.Reussi;
                 echec.Text += "\n" + item.Echec;
                 resultat.Text += "\n" + pourcentage;
-                max_mort.Text += "\n" + item.Max_Mort;
+                max_mort.Text += "\n" + item.Max_Mort.ToString();
             }
         }
     }

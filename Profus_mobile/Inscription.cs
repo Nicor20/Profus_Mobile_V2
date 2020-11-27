@@ -89,7 +89,7 @@ namespace Profus_mobile
                     string text = item.Prenom + " " + item.Nom + " (" + item.Age + ")";
                     if(spinner[i].SelectedItem.ToString() == text)
                     {
-                        Users player = new Users(item.Numero, item.Prenom, item.Nom, item.Age, 0, 0, 0);
+                        Game_Player player = new Game_Player(item.Numero, item.Prenom, item.Nom, item.Age, 0, 0, 0);
                         Variables.List_Joueur.Add(player);
                     }
                 }

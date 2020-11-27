@@ -30,6 +30,7 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.Bouton_Parametre).Enabled = false;
 
             //Création de la Db
+            //DB_Manager.Delete_DB();
             DB_Manager.Start_DB();
         }
 

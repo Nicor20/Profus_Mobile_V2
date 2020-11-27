@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -87,11 +88,13 @@ namespace Profus_mobile
             //Envoyer la variable pour le mode
             if (Radio_Normal.Checked == false && int.Parse(split[0]) == 1)
             {
+                Log.Info("Option", "Jusqu'a la mort");
                 Variables.Mode_Jeu = "Mort";
                 DB_Manager.Create_Question_List(Spinner_Niveau.SelectedItem.ToString(), "Aléatoire");
             }
             else
             {
+                Log.Info("Option", "Normal");
                 Variables.Mode_Jeu = "Normal";
                 DB_Manager.Create_Question_List(Spinner_Niveau.SelectedItem.ToString(), Spinner_Categorie.SelectedItem.ToString());
             }

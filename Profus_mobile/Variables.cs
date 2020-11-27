@@ -13,9 +13,8 @@ using SQLite;
 
 namespace Profus_mobile
 {
-    class Users
+    class Game_Player
     {
-        [PrimaryKey]
         public int Numero { get; set; }
         public string Prenom { get; set; }
         public string Nom { get; set; }
@@ -24,7 +23,7 @@ namespace Profus_mobile
         public int Echec { get; set; }
         public int Max_Mort { get; set; }
 
-        public Users(int numero, string prenom, string nom, int age, int reussi, int echec, int max_mort)
+        public Game_Player(int numero, string prenom, string nom, int age, int reussi, int echec, int max_mort)
         {
             Numero = numero;
             Prenom = prenom;
@@ -32,9 +31,10 @@ namespace Profus_mobile
             Age = age;
             Reussi = reussi;
             Echec = echec;
+            Max_Mort = max_mort;
         }
 
-        public Users()
+        public Game_Player()
         {
 
         }
@@ -47,10 +47,8 @@ namespace Profus_mobile
 
     }
 
-    class Questions
+    class Game_Question
     {
-        [PrimaryKey]
-        public int Numero { get; set; }
         public string Niveau { get; set; }
         public string Categorie { get; set; }
         public string Question { get; set; }
@@ -60,19 +58,7 @@ namespace Profus_mobile
         public string Reponse3 { get; set; }
         public string Reponse4 { get; set; }
 
-        public Questions(int numero, string niveau, string categorie, string question, int num_reponse, string reponse1, string reponse2, string reponse3, string reponse4)
-        {
-            Numero = numero;
-            Niveau = niveau;
-            Categorie = categorie;
-            Question = question;
-            Num_Reponse = num_reponse;
-            Reponse1 = reponse1;
-            Reponse2 = reponse2;
-            Reponse3 = reponse3;
-            Reponse4 = reponse4;
-        }
-        public Questions(string niveau, string categorie, string question, int num_reponse, string reponse1, string reponse2, string reponse3, string reponse4)
+        public Game_Question(string niveau, string categorie, string question, int num_reponse, string reponse1, string reponse2, string reponse3, string reponse4)
         {
             Niveau = niveau;
             Categorie = categorie;
@@ -83,7 +69,7 @@ namespace Profus_mobile
             Reponse3 = reponse3;
             Reponse4 = reponse4;
         }
-        public Questions()
+        public Game_Question()
         {
 
         }
@@ -93,13 +79,12 @@ namespace Profus_mobile
             return Categorie + "\nQuestion :\n\t" + Question + "\n\nA) " + Reponse1 + "\nB) " + Reponse2 + "\nC) " + Reponse3 + "\nD) " + Reponse4;
         }
     }
-
     class Variables
     {
         public static int NbJoueur;
         public static string Mode_Jeu;
-        public static List<Users> List_Joueur = new List<Users>();
-        public static List<Questions> List_Question= new List<Questions>();
+        public static List<Game_Player> List_Joueur = new List<Game_Player>();
+        public static List<Game_Question> List_Question= new List<Game_Question>();
         public static List<string> List_Niveau = new List<string>();
         public static List<string> List_Categorie = new List<string>();
         public static List<string> Recap_Game = new List<string>();
