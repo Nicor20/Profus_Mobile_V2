@@ -17,8 +17,10 @@
     <activity android:label="@string/app_name" android:name="interface_questions"></activity>
     <activity android:label="@string/app_name" android:name="NouveauJoueur"></activity>
     <activity android:label="@string/app_name" android:name="Recap_Game"></activity>
+    <activity android:label="@string/app_name" android:name="Instruction"></activity>
     <activity android:label="Info" android:screenOrientation="landscape" android:theme="@style/AppTheme" android:name="crc647c4441a42b754995.Info" />
     <activity android:label="Inscription" android:screenOrientation="landscape" android:name="crc647c4441a42b754995.Inscription" />
+    <activity android:label="Instruction" android:screenOrientation="landscape" android:name="crc647c4441a42b754995.Instruction" />
     <activity android:label="interface_questions" android:screenOrientation="landscape" android:name="crc647c4441a42b754995.interface_questions" />
     <activity android:label="Leaderboard" android:screenOrientation="landscape" android:name="crc647c4441a42b754995.Leaderboard" />
     <activity android:label="@string/app_name" android:screenOrientation="landscape" android:theme="@style/AppTheme" android:name="crc647c4441a42b754995.MainActivity">

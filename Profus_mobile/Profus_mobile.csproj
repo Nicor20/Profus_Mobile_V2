@@ -64,9 +64,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bluetooth_Manager.cs" />
     <Compile Include="DB_Manager.cs" />
     <Compile Include="Info.cs" />
     <Compile Include="Inscription.cs" />
+    <Compile Include="Instruction.cs" />
     <Compile Include="interface_questions.cs" />
     <Compile Include="Leaderboard.cs" />
     <Compile Include="MainActivity.cs" />
@@ -163,6 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Popup.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instruction.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

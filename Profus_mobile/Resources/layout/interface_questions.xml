@@ -8,107 +8,99 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/linearLayout1" >
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_weight="15"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/linearLayout3" >
+        <Space
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:id="@+id/space2" />
+        <TextView
+            android:text="Numero Joueur + Nom"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout2" >
-            <Button
-                android:text="A"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:id="@+id/buttonA" />
-            <Button
-                android:text="B"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                
-                android:id="@+id/buttonB" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
+            android:layout_weight="10"
+            android:id="@+id/textViewInfo_Joueur" />
+        <TextView
+            android:text="Num question + Categorie"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="70"
-            android:id="@+id/linearLayout4">
-            <TextView
-                android:text="Numero Joueur + Nom"
-                android:gravity="center"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:id="@+id/textViewInfo_Joueur" />
-            <TextView
-                android:text="Num question + Categorie"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:id="@+id/textViewInfo_Question" />
-            <TextView
-                android:text="Afficher la question de maniere approprié."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="83"
-                android:id="@+id/textView_Question" />
-            <LinearLayout
-                android:orientation="horizontal"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:id="@+id/linearLayout5">
-                <Button
-                    android:text="Retour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/button_Retour" />
-                <Button
-                    android:text="Terminé"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/button_Terminer" />
-            </LinearLayout>
-        </LinearLayout>
-        
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_weight="15"
+            android:layout_weight="10"
+            android:id="@+id/textViewInfo_Question" />
+        <Space
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:id="@+id/space2" />
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:id="@+id/space1" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="80"
+        android:id="@+id/linearLayout4">
+        <Button
+            android:text="R\ne\nt\no\nu\nr"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/button_Retour" />
+        <TextView
+            android:text="Afficher la question de maniere approprié."
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout3">
-            <Button
-                android:text="C"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                
-                android:id="@+id/buttonC" />
-            <Button
-                android:text="D"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                
-                android:id="@+id/buttonD" />
-
-        </LinearLayout>
+            android:layout_weight="100"
+            android:id="@+id/textView_Question" />
+        <Button
+            android:text="T\ne\nr\nm\ni\nn\né"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/button_Terminer" />
 
     </LinearLayout>
-
+   
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/linearLayout2" >
+        <Button
+            android:text="A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:id="@+id/buttonA" />
+        <Button
+            android:text="B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            
+            android:id="@+id/buttonB" />
+        <Button
+            android:text="C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            
+            android:id="@+id/buttonC" />
+        <Button
+            android:text="D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            
+            android:id="@+id/buttonD" />
+    </LinearLayout>
 </LinearLayout>

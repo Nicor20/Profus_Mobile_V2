@@ -24,6 +24,10 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.button_Menu).Click += this.Menu;
             FindViewById<Button>(Resource.Id.button_Rejouer).Click += this.Rejouer;
 
+            foreach (var player in Variables.List_Joueur)
+            {
+                DB_Manager.Update_User(player.Numero, player.Prenom, player.Nom, player.Age, player.Reussi, player.Echec, player.Max_Mort);
+            }
 
             Affichage = FindViewById<TextView>(Resource.Id.textView1);
             Affichage.Text = "";
@@ -54,7 +58,7 @@ namespace Profus_mobile
 
         private void Rejouer(object sender, System.EventArgs e)
         {
-            StartActivity(new Intent(this, typeof(interface_questions)));
+            StartActivity(new Intent(this, typeof(Instruction)));
             Finish();
         }
 

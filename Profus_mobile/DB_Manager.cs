@@ -18,7 +18,7 @@ namespace Profus_mobile
     [Table("Utilisateur")]
     public class Users
     {
-        [PrimaryKey,AutoIncrement]
+        [PrimaryKey]
         [Column("Numero")]
         public int Numero { get; set; }
         [Column("Prenom")]
@@ -108,7 +108,7 @@ namespace Profus_mobile
 
     class DB_Manager
     {
-        public static string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Robus_Profus_db.db3");
+        public static string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Profus_db.db3");
 
         public static void Delete_DB()
         {

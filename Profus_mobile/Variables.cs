@@ -89,7 +89,7 @@ namespace Profus_mobile
         public static List<string> List_Categorie = new List<string>();
         public static List<string> Recap_Game = new List<string>();
 
-
+        public static bool Bluetooth_Connected = false;
         public static List<int> Joueurs = new List<int>();
     }
 }

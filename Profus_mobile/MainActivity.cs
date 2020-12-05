@@ -32,6 +32,7 @@ namespace Profus_mobile
             //Création de la Db
             //DB_Manager.Delete_DB();
             DB_Manager.Start_DB();
+            Bluetooth_Manager.Start_Bluetooth();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -43,7 +44,23 @@ namespace Profus_mobile
 
         void Jouer(object sender, System.EventArgs e)
         {
-            StartActivity(new Intent(this, typeof(Options_Jeu)));
+            if(Variables.Bluetooth_Connected == true)
+            {
+                StartActivity(new Intent(this, typeof(Options_Jeu)));
+            }
+            else
+            {
+                if(Bluetooth_Manager.Connect() == true)
+                {
+                    Variables.Bluetooth_Connected = true;
+                    StartActivity(new Intent(this, typeof(Options_Jeu)));
+                }
+                else
+                {
+                    Variables.Bluetooth_Connected = false;
+                    Toast.MakeText(this, "Ouvrir le robot", ToastLength.Long);
+                }
+            }
         }
 
         void Inscription(object sender, System.EventArgs e)

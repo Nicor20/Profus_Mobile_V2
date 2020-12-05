@@ -36,9 +36,6 @@ namespace Profus_mobile
         TextView View_Question;
 
         public List<int> exclude = new List<int>();
-        Dialog pop;
-        System.Timers.Timer time;
-        bool finGame = false;
 
         protected override void OnDestroy()
         {
@@ -47,17 +44,21 @@ namespace Profus_mobile
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //Setup initial de la fenetre
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.interface_questions);
 
+            //Variables
             Variables.Recap_Game.Clear();
+            NbQuestion = Variables.List_Question.Count();
+            NbJoueur = Variables.List_Joueur.Count();
 
             //Exemple d'appel pour l'affichage selon le numero
             View_Info_Joueur = FindViewById<TextView>(Resource.Id.textViewInfo_Joueur);
             View_Info_Question = FindViewById<TextView>(Resource.Id.textViewInfo_Question);
             View_Question = FindViewById<TextView>(Resource.Id.textView_Question);
 
+            //Setup des boutons dans l'écran
             FindViewById<Button>(Resource.Id.buttonA).Click += Bouton_A;
             FindViewById<Button>(Resource.Id.buttonB).Click += Bouton_B;
             FindViewById<Button>(Resource.Id.buttonC).Click += Bouton_C;
@@ -65,11 +66,10 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.button_Retour).Click += Retour;
             FindViewById<Button>(Resource.Id.button_Terminer).Click += Terminer;
 
-            NbQuestion = Variables.List_Question.Count();
-            NbJoueur = Variables.List_Joueur.Count();
-
+            //Setup de la question
             Choisir_Question();
             Afficher_Question();
+
         }
 
         private void Terminer(object sender, EventArgs e)
@@ -81,103 +81,128 @@ namespace Profus_mobile
         {
             Finish();
         }
+
         private void Bouton_A(object sender, EventArgs e)
         {
-            if (Num_Reponse == 1)
-            {
-                Reponse_bon_faux(true,1);
-            }
-            else
-            {
-                Reponse_bon_faux(false,1);
-            }
+            Bluetooth_Manager.Write(6);
+            //Thread.Sleep(1000);
+            Reponse_bon_faux(1);
         }
         private void Bouton_B(object sender, EventArgs e)
         {
-            if (Num_Reponse == 2)
-            {
-                Reponse_bon_faux(true,2);
-            }
-            else
-            {
-                Reponse_bon_faux(false,2);
-            }
+            Bluetooth_Manager.Write(7);
+            //Thread.Sleep(1000);
+            Reponse_bon_faux(2);
         }
         private void Bouton_C(object sender, EventArgs e)
         {
-            if (Num_Reponse == 3)
-            {
-                Reponse_bon_faux(true,3);
-            }
-            else
-            {
-                Reponse_bon_faux(false,3);
-            }
+            Bluetooth_Manager.Write(8);
+            //Thread.Sleep(1000);
+            Reponse_bon_faux(3);
         }
         private void Bouton_D(object sender, EventArgs e)
         {
-            if (Num_Reponse == 4)
-            {
-                Reponse_bon_faux(true,4);
-            }
-            else
-            {
-                Reponse_bon_faux(false,4);
-            }
+            Bluetooth_Manager.Write(9);
+            //Thread.Sleep(1000);
+            Reponse_bon_faux(4);
         }
 
-        private void Reponse_bon_faux(bool rep,int bouton)
+
+        private void Reponse_bon_faux(int bouton)
         {
-            Recap_Game(rep,bouton);
-            if (Variables.Mode_Jeu == "Mort")
+            //Thread.Sleep(100);
+            int reponse = Bluetooth_Manager.Read();
+            if (reponse == 1)
             {
-                if(rep == true && Num_Question < NbQuestion)
+                Recap_Game(true, bouton);
+                if (Variables.Mode_Jeu == "Mort")
                 {
-                    Log.Info("Avant", Variables.List_Joueur[Num_Joueur].Max_Mort.ToString());
                     Variables.List_Joueur[Num_Joueur].Max_Mort++;
-                    Log.Info("Après", Variables.List_Joueur[Num_Joueur].Max_Mort.ToString());
                     Changer_Joueur();
                     Choisir_Question();
                     Afficher_Question();
                 }
-                else
-                {
-                    Fin_Partie();
-                }
-            }
-            else
-            {
-                if(rep == true && Num_Question < NbQuestion)
+                else if (Num_Question < NbQuestion)
                 {
                     Variables.List_Joueur[Num_Joueur].Reussi++;
                     Changer_Joueur();
                     Choisir_Question();
                     Afficher_Question();
-                    Popup("Bonne réponse!");
                 }
-                else if(rep == false && Num_Question < NbQuestion)
+                else
+                {
+                    Variables.List_Joueur[Num_Joueur].Reussi++;
+                    Fin_Partie();
+                }
+            }
+            else if(reponse == 2)
+            {
+                Recap_Game(false, bouton);
+                if (Variables.Mode_Jeu == "Mort")
+                {
+                    Fin_Partie();
+                }
+                else if (Num_Question < NbQuestion)
                 {
                     Variables.List_Joueur[Num_Joueur].Echec++;
                     Changer_Joueur();
                     Choisir_Question();
                     Afficher_Question();
-                    Popup("Mauvaise réponse!");
                 }
                 else
                 {
-                    if(rep == true)
-                    {
-                        Variables.List_Joueur[Num_Joueur].Reussi++;
-                        Popup("Bonne réponse!");
-                    }
-                    else
-                    {
-                        Variables.List_Joueur[Num_Joueur].Echec++;
-                        Popup("Mauvaise réponse!");
-                    }
-                    finGame = true;
+                    Variables.List_Joueur[Num_Joueur].Echec++;
+                    Fin_Partie();
                 }
             }
+
+
+
+            /*
+            if(bouton == Num_Reponse)
+            {
+                Recap_Game(true, bouton);
+                if(Variables.Mode_Jeu == "Mort")
+                {
+                    Variables.List_Joueur[Num_Joueur].Max_Mort++;
+                    Changer_Joueur();
+                    Choisir_Question();
+                    Afficher_Question();
+                }
+                else if(Num_Question < NbQuestion)
+                {
+                    Variables.List_Joueur[Num_Joueur].Reussi++;
+                    Changer_Joueur();
+                    Choisir_Question();
+                    Afficher_Question();
+                }
+                else
+                {
+                    Variables.List_Joueur[Num_Joueur].Reussi++;
+                    Fin_Partie();
+                }
+            }
+            else
+            {
+                Recap_Game(false, bouton);
+                if (Variables.Mode_Jeu == "Mort")
+                {
+                    Fin_Partie();
+                }
+                else if(Num_Question < NbQuestion)
+                {
+                    Variables.List_Joueur[Num_Joueur].Echec++;
+                    Changer_Joueur();
+                    Choisir_Question();
+                    Afficher_Question();
+                }
+                else
+                {
+                    Variables.List_Joueur[Num_Joueur].Echec++;
+                    Fin_Partie();
+                }
+            }
+            */
         }
 
         private void Changer_Joueur()
@@ -199,6 +224,23 @@ namespace Profus_mobile
             Num_Question_List = range.ElementAt(new Random().Next(0, NbQuestion - exclude.Count()));
             exclude.Add(Num_Question_List);
             Num_Reponse = Variables.List_Question[Num_Question_List].Num_Reponse;
+            
+            if(Num_Reponse == 1)
+            {
+                Bluetooth_Manager.Write(2);
+            }
+            else if(Num_Reponse == 2)
+            {
+                Bluetooth_Manager.Write(3);
+            }
+            else if (Num_Reponse == 2)
+            {
+                Bluetooth_Manager.Write(4);
+            }
+            else
+            {
+                Bluetooth_Manager.Write(5);
+            }
         }
 
         private void Afficher_Question()
@@ -244,46 +286,12 @@ namespace Profus_mobile
             Variables.Recap_Game.Add(text);
         }
 
-
         private void Fin_Partie()
         {
-            foreach(var player in Variables.List_Joueur)
-            {
-                DB_Manager.Update_User(player.Numero, player.Prenom, player.Nom, player.Age, player.Reussi, player.Echec, player.Max_Mort);
-            }
-            
-            StartActivity(new Intent(this, typeof(Recap_Game)));
             Finish();
+            StartActivity(new Intent(this, typeof(Recap_Game)));
         }
 
-        private void Popup(string Resultat)
-        {
-            pop = new Dialog(this);
-            pop.SetContentView(Resource.Layout.Popup);
-            pop.Window.SetSoftInputMode(SoftInput.AdjustResize);
-            pop.Window.SetLayout(LayoutParams.MatchParent, LayoutParams.WrapContent);
-            pop.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
-            pop.FindViewById<TextView>(Resource.Id.textViewResultat).Text = Resultat;
-            pop.Show();
-            time = new System.Timers.Timer(2000);
-            time.Elapsed += ClosePopup;
-            time.AutoReset = false;
-            time.Enabled = true;
-
-        }
-
-        public void ClosePopup(Object source, ElapsedEventArgs e)
-        {   
-            if(finGame == true)
-            {
-                Fin_Partie();
-            }
-            time.Stop();
-            time.Dispose();
-            pop.Dismiss();
-            pop.Hide();
-
-
-        }
+        
     }
 }

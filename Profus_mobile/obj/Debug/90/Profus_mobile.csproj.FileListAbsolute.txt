@@ -1109,3 +1109,5 @@ C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\stamp\_Resolv
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\options_jeu.xml
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\src\crc647c4441a42b754995\Options_Jeu.java
 C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\popup.xml
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\res\layout\instruction.xml
+C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\android\src\crc647c4441a42b754995\Instruction.java

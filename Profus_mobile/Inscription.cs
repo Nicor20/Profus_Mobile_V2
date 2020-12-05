@@ -94,7 +94,7 @@ namespace Profus_mobile
                     }
                 }
             }
-            StartActivity(new Intent(this, typeof(interface_questions)));
+            StartActivity(new Intent(this, typeof(Instruction)));
             this.Finish();
         }
 

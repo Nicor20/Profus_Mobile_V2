@@ -50,6 +50,7 @@ namespace Profus_mobile
 
         void Text_Age(object sender, System.EventArgs e)
         {
+            /*
             if(int.Parse(age.Text) > 122)
             {
                 age.SetBackgroundColor(Android.Graphics.Color.Red);
@@ -58,6 +59,7 @@ namespace Profus_mobile
             {
                 age.SetBackgroundColor(Android.Graphics.Color.White);
             }
+            */
         }
 
         void Retour(object sender, System.EventArgs e)
