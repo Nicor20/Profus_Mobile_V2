@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Widget;
 using System;
 using Android.Content;
+using System.Threading;
 
 namespace Profus_mobile
 {
@@ -16,6 +17,9 @@ namespace Profus_mobile
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+            FindViewById<ImageView>(Resource.Id.imageView1).SetImageResource(Resource.Drawable.Logo_Decale);
+            FindViewById<ImageView>(Resource.Id.imageView1).SetMaxWidth(FindViewById<ImageView>(Resource.Id.imageView1).Height); 
+
 
             #region Initialisation des boutons
             FindViewById<Button>(Resource.Id.Bouton_Jouer).Click += this.Jouer;
@@ -50,6 +54,7 @@ namespace Profus_mobile
             }
             else
             {
+                Thread.Sleep(2000);
                 if(Bluetooth_Manager.Connect() == true)
                 {
                     Variables.Bluetooth_Connected = true;

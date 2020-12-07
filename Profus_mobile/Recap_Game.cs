@@ -68,6 +68,10 @@ namespace Profus_mobile
             intent.AddFlags(ActivityFlags.ClearTask);
             intent.AddFlags(ActivityFlags.ClearTop);
             intent.AddFlags(ActivityFlags.NewTask);
+            Bluetooth_Manager.Disconnect();
+            Variables.Bluetooth_Connected = false;
+
+
             StartActivity(intent);
             Finish();
         }

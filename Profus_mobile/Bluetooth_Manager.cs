@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Bluetooth;
@@ -86,6 +87,7 @@ namespace Profus_mobile
             try
             {
                 _socket.OutputStream.WriteByte(text);
+                _socket.OutputStream.Flush();
             }
             catch (Exception outPutEX)
             {
@@ -97,25 +99,93 @@ namespace Profus_mobile
         {
             byte[] rbuffer = new byte[200];
             byte[] RetArray = new byte[] { };
+            int reponse = 0;
 
+            while(reponse == 0)
+            {
+
+                try
+                {
+                    if (_socket.InputStream.IsDataAvailable() == true && _socket.InputStream.CanRead == true)
+                    {
+                        int readByte = _socket.InputStream.Read(rbuffer, 0, rbuffer.Length);
+
+                        RetArray = new byte[readByte];
+                        Array.Copy(rbuffer.ToArray(), 0, RetArray, 0, readByte);
+                        for (int i = 0; i < RetArray.Length; i++)
+                        {
+                            if (RetArray[i] == 49)
+                            {
+                                reponse = 1;
+                            }
+                            else if (RetArray[i] == 50)
+                            {
+                                reponse = 2;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        reponse = 0;
+                    }
+                }
+                catch
+                {
+                    reponse = 0;
+                }
+                Log.Info("Lecture Bluetooth", reponse.ToString());
+            }
+            return reponse;
+
+
+
+
+
+/*
             try
             {
+                if(_socket.InputStream.IsDataAvailable() == true && _socket.InputStream.CanRead == true)
+                {
+                    int readByte = _socket.InputStream.Read(rbuffer, 0, rbuffer.Length);
+
+                    RetArray = new byte[readByte];
+                    Array.Copy(rbuffer.ToArray(), 0, RetArray, 0, readByte);
+                    for(int i = 0;i<RetArray.Length;i++)
+                    {
+                        if (RetArray[i] == 49)
+                        {
+                            return 1;
+                        }
+                        else if (RetArray[i] == 50)
+                        {
+                            return 2;
+                        }
+                    }
+                }
+                
+                while(_socket.InputStream.IsDataAvailable() != true)
+                {
+
+                }
+
+                
                 while (!_socket.InputStream.CanRead || !_socket.InputStream.IsDataAvailable())
                 {
                     //Console.WriteLine("------------------------------------------------");
                 }
-
+                
                 //return int.Parse(_socket.InputStream.ReadByte().ToString());
                 
                 int readByte = _socket.InputStream.Read(rbuffer, 0, rbuffer.Length);
+
                 RetArray = new byte[readByte];
                 Array.Copy(rbuffer.ToArray(), 0, RetArray, 0, readByte);
 
-                if(RetArray[0] == 49)
+                if(RetArray.Contains<byte>(49) == true)
                 {
                     return 1;
                 }
-                else if (RetArray[0] == 50)
+                else if (RetArray.Contains<byte>(50) == true)
                 {
                     return 2;
                 }
@@ -126,6 +196,8 @@ namespace Profus_mobile
 
             }
             return 0;
+*/
+
         }
 
         public static string Array2Text(byte[] sBuffer)

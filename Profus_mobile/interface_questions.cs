@@ -31,6 +31,7 @@ namespace Profus_mobile
         private int NbQuestion;
         private int NbJoueur;
 
+
         TextView View_Info_Joueur;
         TextView View_Info_Question;
         TextView View_Question;
@@ -84,34 +85,36 @@ namespace Profus_mobile
 
         private void Bouton_A(object sender, EventArgs e)
         {
+            Thread.Sleep(150);
             Bluetooth_Manager.Write(6);
-            //Thread.Sleep(1000);
             Reponse_bon_faux(1);
         }
         private void Bouton_B(object sender, EventArgs e)
         {
+            Thread.Sleep(150);
             Bluetooth_Manager.Write(7);
-            //Thread.Sleep(1000);
             Reponse_bon_faux(2);
         }
         private void Bouton_C(object sender, EventArgs e)
         {
+            Thread.Sleep(150);
             Bluetooth_Manager.Write(8);
-            //Thread.Sleep(1000);
             Reponse_bon_faux(3);
         }
         private void Bouton_D(object sender, EventArgs e)
         {
+            Thread.Sleep(150);
             Bluetooth_Manager.Write(9);
-            //Thread.Sleep(1000);
             Reponse_bon_faux(4);
         }
 
 
         private void Reponse_bon_faux(int bouton)
         {
-            //Thread.Sleep(100);
+            Thread.Sleep(150);
+
             int reponse = Bluetooth_Manager.Read();
+
             if (reponse == 1)
             {
                 Recap_Game(true, bouton);
@@ -224,8 +227,8 @@ namespace Profus_mobile
             Num_Question_List = range.ElementAt(new Random().Next(0, NbQuestion - exclude.Count()));
             exclude.Add(Num_Question_List);
             Num_Reponse = Variables.List_Question[Num_Question_List].Num_Reponse;
-            
-            if(Num_Reponse == 1)
+            Thread.Sleep(150);
+            if (Num_Reponse == 1)
             {
                 Bluetooth_Manager.Write(2);
             }
@@ -233,7 +236,7 @@ namespace Profus_mobile
             {
                 Bluetooth_Manager.Write(3);
             }
-            else if (Num_Reponse == 2)
+            else if (Num_Reponse == 3)
             {
                 Bluetooth_Manager.Write(4);
             }

@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -26,10 +27,28 @@ namespace Profus_mobile
 
         private void Demarer(object sender, EventArgs e)
         {
+            //Thread.Sleep(150);
             Bluetooth_Manager.Write(1);
+            Thread.Sleep(150);
+            int reponse = Bluetooth_Manager.Read();
 
-            Thread.Sleep(500);
-            if (Bluetooth_Manager.Read() == 1)
+            /*
+            bool rep = false;
+            int reponse = Bluetooth_Manager.Read();
+
+            while(rep != true)
+            {
+                Log.Info("Lancer le jeu", reponse.ToString());
+                if(reponse == 1)
+                {
+                    rep = true;
+                    break;
+                }
+                reponse = Bluetooth_Manager.Read();
+            }
+            */
+
+            if ( reponse == 1 || reponse == 2)
             {
                 StartActivity(new Intent(this, typeof(interface_questions)));
                 this.Finish();

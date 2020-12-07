@@ -9,11 +9,10 @@
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1">
     <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/imageView1" />
+        android:layout_weight="100"
+        android:id="@+id/imageView1"/>
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"

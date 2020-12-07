@@ -72,8 +72,12 @@ namespace Profus_mobile
 
         void RetourVersModeDeJeu (object sender, System.EventArgs e)
         {
-            //TODO activity result pour retourner à l'activité précédente avec les mêmme choix qu'avant (mode de jeu  temporaire)
-            this.Finish();
+            Intent intent = new Intent(this, typeof(MainActivity));
+            intent.AddFlags(ActivityFlags.ClearTask);
+            intent.AddFlags(ActivityFlags.ClearTop);
+            intent.AddFlags(ActivityFlags.NewTask);
+            StartActivity(intent);
+            Finish();
         }
 
         void JouerAuJeu(object sender, System.EventArgs e)
@@ -104,7 +108,7 @@ namespace Profus_mobile
             spin.Prompt = "Joueur #"+ (numero_joueur);
             List<string> Joueurs_Disponible = new List<string>();
             Joueurs_Disponible.Add("Choix du Joueur");
-            Joueurs_Disponible.Add("Inscription");
+            //Joueurs_Disponible.Add("Inscription");
 
             var db = new SQLiteConnection(DB_Manager.dbPath);
             var table = db.Table<Users>();
