@@ -20,7 +20,20 @@ namespace Profus_mobile
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.Info);
 
+            FindViewById<Button>(Resource.Id.buttonRetour).Click += Retour;
+
+
+
             // Create your application here
+        }
+        void Retour(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            intent.AddFlags(ActivityFlags.ClearTask);
+            intent.AddFlags(ActivityFlags.ClearTop);
+            intent.AddFlags(ActivityFlags.NewTask);
+            StartActivity(intent);
+            Finish();
         }
     }
 }

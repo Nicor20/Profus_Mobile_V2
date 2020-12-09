@@ -18,8 +18,7 @@ namespace Profus_mobile
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             FindViewById<ImageView>(Resource.Id.imageView1).SetImageResource(Resource.Drawable.Logo_Decale);
-            FindViewById<ImageView>(Resource.Id.imageView1).SetMaxWidth(FindViewById<ImageView>(Resource.Id.imageView1).Height); 
-
+            FindViewById<ImageView>(Resource.Id.imageView1).LayoutParameters.Width = FindViewById<LinearLayout>(Resource.Id.linearLayout1).Width / 2;
 
             #region Initialisation des boutons
             FindViewById<Button>(Resource.Id.Bouton_Jouer).Click += this.Jouer;
@@ -30,13 +29,15 @@ namespace Profus_mobile
             FindViewById<Button>(Resource.Id.Bouton_Quitter).Click += this.Quitter;
             #endregion
 
-            FindViewById<Button>(Resource.Id.Bouton_Info).Enabled = false;
-            FindViewById<Button>(Resource.Id.Bouton_Parametre).Enabled = false;
-
             //Création de la Db
             //DB_Manager.Delete_DB();
             DB_Manager.Start_DB();
-            Bluetooth_Manager.Start_Bluetooth();
+
+            if(Variables.Play_With_Bluetooth == true)
+            {
+                Bluetooth_Manager.Start_Bluetooth();
+            }
+            
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -48,11 +49,7 @@ namespace Profus_mobile
 
         void Jouer(object sender, System.EventArgs e)
         {
-            if(Variables.Bluetooth_Connected == true)
-            {
-                StartActivity(new Intent(this, typeof(Options_Jeu)));
-            }
-            else
+            if(Variables.Bluetooth_Connected == false && Variables.Play_With_Bluetooth == true)
             {
                 Thread.Sleep(2000);
                 if(Bluetooth_Manager.Connect() == true)
@@ -63,8 +60,12 @@ namespace Profus_mobile
                 else
                 {
                     Variables.Bluetooth_Connected = false;
-                    Toast.MakeText(this, "Ouvrir le robot", ToastLength.Long);
+                    Toast.MakeText(this, "Appareil bluetooth introuvable", ToastLength.Long).Show();
                 }
+            }
+            else
+            {
+                StartActivity(new Intent(this, typeof(Options_Jeu)));
             }
         }
 

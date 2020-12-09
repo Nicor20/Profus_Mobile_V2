@@ -12,6 +12,7 @@ Button;obj\Debug\90\res\layout\mode_de_jeu.xml
 Button;obj\Debug\90\res\layout\montrer_carte.xml
 Button;obj\Debug\90\res\layout\nouveaujoueur.xml
 Button;obj\Debug\90\res\layout\options_jeu.xml
+Button;obj\Debug\90\res\layout\parametre.xml
 Button;obj\Debug\90\res\layout\popup.xml
 Button;obj\Debug\90\res\layout\recap_game.xml
 cache-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90\lp\36\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -24,6 +25,7 @@ external-path;C:\Users\canti\Desktop\Profus_Mobile_V2\Profus_mobile\obj\Debug\90
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 ImageView;obj\Debug\90\res\layout\activity_main.xml
+ImageView;obj\Debug\90\res\layout\info.xml
 ImageView;obj\Debug\90\res\layout\montrer_carte.xml
 ImageView;obj\Debug\90\res\layout\options_jeu.xml
 item;obj\Debug\90\res\values\strings.xml

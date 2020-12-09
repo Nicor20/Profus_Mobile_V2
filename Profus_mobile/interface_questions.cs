@@ -85,35 +85,44 @@ namespace Profus_mobile
 
         private void Bouton_A(object sender, EventArgs e)
         {
-            Thread.Sleep(150);
-            Bluetooth_Manager.Write(6);
+            
             Reponse_bon_faux(1);
         }
         private void Bouton_B(object sender, EventArgs e)
         {
-            Thread.Sleep(150);
-            Bluetooth_Manager.Write(7);
             Reponse_bon_faux(2);
         }
         private void Bouton_C(object sender, EventArgs e)
         {
-            Thread.Sleep(150);
-            Bluetooth_Manager.Write(8);
             Reponse_bon_faux(3);
         }
         private void Bouton_D(object sender, EventArgs e)
         {
-            Thread.Sleep(150);
-            Bluetooth_Manager.Write(9);
             Reponse_bon_faux(4);
         }
 
 
         private void Reponse_bon_faux(int bouton)
         {
-            Thread.Sleep(150);
-
-            int reponse = Bluetooth_Manager.Read();
+            int reponse;
+            if(Variables.Play_With_Bluetooth == true)
+            {
+                Thread.Sleep(150);
+                Bluetooth_Manager.Write((byte)(bouton+5));
+                Thread.Sleep(150);
+                reponse = Bluetooth_Manager.Read();
+            }
+            else
+            {
+                if(bouton == Num_Reponse)
+                {
+                    reponse = 1;
+                }
+                else
+                {
+                    reponse = 2;
+                }
+            }
 
             if (reponse == 1)
             {
@@ -138,7 +147,7 @@ namespace Profus_mobile
                     Fin_Partie();
                 }
             }
-            else if(reponse == 2)
+            else
             {
                 Recap_Game(false, bouton);
                 if (Variables.Mode_Jeu == "Mort")
@@ -158,54 +167,6 @@ namespace Profus_mobile
                     Fin_Partie();
                 }
             }
-
-
-
-            /*
-            if(bouton == Num_Reponse)
-            {
-                Recap_Game(true, bouton);
-                if(Variables.Mode_Jeu == "Mort")
-                {
-                    Variables.List_Joueur[Num_Joueur].Max_Mort++;
-                    Changer_Joueur();
-                    Choisir_Question();
-                    Afficher_Question();
-                }
-                else if(Num_Question < NbQuestion)
-                {
-                    Variables.List_Joueur[Num_Joueur].Reussi++;
-                    Changer_Joueur();
-                    Choisir_Question();
-                    Afficher_Question();
-                }
-                else
-                {
-                    Variables.List_Joueur[Num_Joueur].Reussi++;
-                    Fin_Partie();
-                }
-            }
-            else
-            {
-                Recap_Game(false, bouton);
-                if (Variables.Mode_Jeu == "Mort")
-                {
-                    Fin_Partie();
-                }
-                else if(Num_Question < NbQuestion)
-                {
-                    Variables.List_Joueur[Num_Joueur].Echec++;
-                    Changer_Joueur();
-                    Choisir_Question();
-                    Afficher_Question();
-                }
-                else
-                {
-                    Variables.List_Joueur[Num_Joueur].Echec++;
-                    Fin_Partie();
-                }
-            }
-            */
         }
 
         private void Changer_Joueur()
@@ -227,22 +188,26 @@ namespace Profus_mobile
             Num_Question_List = range.ElementAt(new Random().Next(0, NbQuestion - exclude.Count()));
             exclude.Add(Num_Question_List);
             Num_Reponse = Variables.List_Question[Num_Question_List].Num_Reponse;
-            Thread.Sleep(150);
-            if (Num_Reponse == 1)
+
+            if(Variables.Play_With_Bluetooth == true)
             {
-                Bluetooth_Manager.Write(2);
-            }
-            else if(Num_Reponse == 2)
-            {
-                Bluetooth_Manager.Write(3);
-            }
-            else if (Num_Reponse == 3)
-            {
-                Bluetooth_Manager.Write(4);
-            }
-            else
-            {
-                Bluetooth_Manager.Write(5);
+                Thread.Sleep(150);
+                if (Num_Reponse == 1)
+                {
+                    Bluetooth_Manager.Write(2);
+                }
+                else if (Num_Reponse == 2)
+                {
+                    Bluetooth_Manager.Write(3);
+                }
+                else if (Num_Reponse == 3)
+                {
+                    Bluetooth_Manager.Write(4);
+                }
+                else
+                {
+                    Bluetooth_Manager.Write(5);
+                }
             }
         }
 

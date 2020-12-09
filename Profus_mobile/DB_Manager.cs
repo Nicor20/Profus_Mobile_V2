@@ -15,23 +15,15 @@ using SQLite;
 
 namespace Profus_mobile
 {
-    [Table("Utilisateur")]
     public class Users
     {
         [PrimaryKey]
-        [Column("Numero")]
         public int Numero { get; set; }
-        [Column("Prenom")]
         public string Prenom { get; set; }
-        [Column("Nom")]
         public string Nom { get; set; }
-        [Column("Age")]
         public int Age { get; set; }
-        [Column("Reussi")]
         public int Reussi { get; set; }
-        [Column("Echec")]
         public int Echec { get; set; }
-        [Column("Max_Mort")]
         public int Max_Mort { get; set; }
 
         public Users(int numero, string prenom, string nom, int age, int reussi, int echec, int max_mort)
@@ -58,27 +50,17 @@ namespace Profus_mobile
 
     }
 
-    [Table("Questions")]
     public class Questions
     {
         [PrimaryKey]
-        [Column("Numero")]
         public int Numero { get; set; }
-        [Column("Niveau")]
         public string Niveau { get; set; }
-        [Column("Categorie")]
         public string Categorie { get; set; }
-        [Column("Question")]
         public string Question { get; set; }
-        [Column("Num_Reponse")]
         public int Num_Reponse { get; set; }
-        [Column("Reponse1")]
         public string Reponse1 { get; set; }
-        [Column("Reponse2")]
         public string Reponse2 { get; set; }
-        [Column("Reponse3")]
         public string Reponse3 { get; set; }
-        [Column("Reponse4")]
         public string Reponse4 { get; set; }
 
         public Questions(int numero, string niveau, string categorie, string question, int num_reponse, string reponse1, string reponse2, string reponse3, string reponse4)
@@ -338,7 +320,7 @@ namespace Profus_mobile
              
             Users New_User = new Users(numero,prenom, nom,age, 0, 0, 0);
             db.Insert(New_User);
-            db.Close();
+            //db.Close();
         }
 
         public static void Delete_User(string prenom, string nom,int age)
@@ -396,9 +378,11 @@ namespace Profus_mobile
             {
                 if (item.Prenom == prenom && item.Nom == nom && item.Age == age)
                 {
+                    db.Close();
                     return true;
                 }
             }
+            //db.Close();
             return false;
         }
 
@@ -418,10 +402,16 @@ namespace Profus_mobile
                     max = item.Max_Mort;
                     res = item.Reussi;
                     ech = item.Echec;
+                    db.Update(new Users(item.Numero, prenom, nom, age, res, ech, max_mort));
                     break;
                 }
             }
+            //db.Close();
 
+
+
+            
+            /*
             if(max_mort >= max)
             {
                 db.Update(new Users(numero, prenom, nom, age, res, ech, max_mort));
@@ -430,8 +420,7 @@ namespace Profus_mobile
             {
                 db.Update(new Users(numero, prenom, nom, age, res + reussi, ech + echec, max));
             }
-
-            db.Close();
+            */
         }
 
         #endregion

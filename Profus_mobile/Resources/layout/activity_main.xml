@@ -11,15 +11,15 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="100"
+        android:layout_weight="1000"
         android:id="@+id/imageView1"/>
     <LinearLayout
         android:orientation="vertical"
+        android:layout_weight="1000"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:id="@+id/linearLayout2">
         <Space
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:id="@+id/space6" />
         <Button
-            android:text="Scores"
+            android:text="Pointages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3"

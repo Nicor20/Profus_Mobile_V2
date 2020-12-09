@@ -27,35 +27,25 @@ namespace Profus_mobile
 
         private void Demarer(object sender, EventArgs e)
         {
-            //Thread.Sleep(150);
-            Bluetooth_Manager.Write(1);
-            Thread.Sleep(150);
-            int reponse = Bluetooth_Manager.Read();
-
-            /*
-            bool rep = false;
-            int reponse = Bluetooth_Manager.Read();
-
-            while(rep != true)
+            if(Variables.Play_With_Bluetooth == true)
             {
-                Log.Info("Lancer le jeu", reponse.ToString());
-                if(reponse == 1)
+                Bluetooth_Manager.Write(1);
+                Thread.Sleep(150);
+                int reponse = Bluetooth_Manager.Read();
+                if ( reponse == 1 || reponse == 2)
                 {
-                    rep = true;
-                    break;
+                    StartActivity(new Intent(this, typeof(interface_questions)));
+                    this.Finish();
                 }
-                reponse = Bluetooth_Manager.Read();
-            }
-            */
-
-            if ( reponse == 1 || reponse == 2)
-            {
-                StartActivity(new Intent(this, typeof(interface_questions)));
-                this.Finish();
+                else
+                {
+                    Toast.MakeText(Application.Context, "Allo", ToastLength.Long);
+                }
             }
             else
             {
-                Toast.MakeText(Application.Context, "Allo", ToastLength.Long);
+                StartActivity(new Intent(this, typeof(interface_questions)));
+                this.Finish();
             }
         }
     }

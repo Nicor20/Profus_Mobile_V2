@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Instruction\n\n1 - Placer le Robot sur la lige en direction du premier joueur.\n\n2 - Appuyer sur le bouton démarer la partie."
+        android:text="Instructions\n\n1 - Placer le Robot sur la lige en direction du premier joueur.\n\n2 - Appuyer sur le bouton démarer la partie."
         android:gravity="center"
         android:layout_weight = "5"
         android:textAppearance="?android:attr/textAppearanceLarge"

@@ -83,6 +83,7 @@ namespace Profus_mobile
     {
         public static int NbJoueur;
         public static string Mode_Jeu;
+        public static bool Play_With_Bluetooth = true;
         public static List<Game_Player> List_Joueur = new List<Game_Player>();
         public static List<Game_Question> List_Question= new List<Game_Question>();
         public static List<string> List_Niveau = new List<string>();

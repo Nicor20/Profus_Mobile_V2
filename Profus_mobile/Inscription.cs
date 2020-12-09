@@ -98,6 +98,7 @@ namespace Profus_mobile
                     }
                 }
             }
+            //db.Close();
             StartActivity(new Intent(this, typeof(Instruction)));
             this.Finish();
         }
