@@ -17,7 +17,6 @@ using Java.Util;
 
 namespace Profus_mobile
 {
-    //https://forums.xamarin.com/discussion/61763/bluetooth-inputstream-not-read-all-byte-sometime
     class Bluetooth_Manager
     {
         public static BluetoothConnection myConnection;
